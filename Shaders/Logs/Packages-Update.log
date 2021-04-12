@@ -44,3 +44,12 @@ The following packages were added:
   com.unity.textmeshpro@3.0.1
   com.unity.timeline@1.4.5
   com.unity.ugui@1.0.0
+
+=== Sun Mar 21 12:51:18 2021
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.render-pipelines.universal from version 10.2.2 to 10.3.2
+  com.unity.visualeffectgraph from version 10.2.2 to 10.3.2
