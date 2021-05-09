@@ -12,613 +12,279 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58839
+56826
 Successfully changed project path to: /Users/omer.avci/Documents/PersonalProjects/Shaders/Shaders
 /Users/omer.avci/Documents/PersonalProjects/Shaders/Shaders
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 62.00 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 61.39 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.0f1 (c7b5465681fb)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.3.0f1/Unity.app/Contents/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path /Users/omer.avci/Documents/PersonalProjects/Shaders/Shaders/Assets
 GfxDevice: creating device client; threaded=0
-2021-03-30 23:16:15.795 Unity[69384:23725456] Color LCD preferred device: AMD Radeon Pro 5300M (high power)
-2021-03-30 23:16:15.795 Unity[69384:23725456] Metal devices available: 2
-2021-03-30 23:16:15.795 Unity[69384:23725456] 0: AMD Radeon Pro 5300M (high power)
-2021-03-30 23:16:15.795 Unity[69384:23725456] 1: Intel(R) UHD Graphics 630 (low power)
-2021-03-30 23:16:15.796 Unity[69384:23725456] Using device AMD Radeon Pro 5300M (high power)
+2021-04-20 23:29:01.557 Unity[66876:3380936] Color LCD preferred device: AMD Radeon Pro 5300M (high power)
+2021-04-20 23:29:01.557 Unity[66876:3380936] Metal devices available: 2
+2021-04-20 23:29:01.557 Unity[66876:3380936] 0: AMD Radeon Pro 5300M (high power)
+2021-04-20 23:29:01.557 Unity[66876:3380936] 1: Intel(R) UHD Graphics 630 (low power)
+2021-04-20 23:29:01.558 Unity[66876:3380936] Using device AMD Radeon Pro 5300M (high power)
 Initializing Metal device caps: AMD Radeon Pro 5300M
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2020.3.0f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2020.3.0f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/Applications/Unity/Hub/Editor/2020.3.0f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56384
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56876
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2020.3.0f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Registered in 0.000476 seconds.
+Registered in 0.002123 seconds.
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 55.82 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 54.65 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.280 seconds
+- Completed reload, in  2.608 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001661 seconds.
+Registered in 0.001551 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 58.61 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 52.12 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 WARNING: RGBA Compressed ETC2 sRGB format is not supported, decompressing texture
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.197 seconds
+- Completed reload, in  1.102 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launching external process: /Applications/Unity/Hub/Editor/2020.3.0f1/Unity.app/Contents/Tools/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
-Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.56 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3117 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 239.7 MB.
-System memory in use after: 239.9 MB.
+Unloading 3157 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 244.8 MB.
+System memory in use after: 245.1 MB.
 
-Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 3555.
-Total: 3.243407 ms (FindLiveObjects: 0.465672 ms CreateObjectMapping: 0.252612 ms MarkObjects: 2.402737 ms  DeleteObjects: 0.121086 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Shaders/ScrollingTextureShader/Stripes01.png
-  artifactKey: Guid(96671294c2a504cf79255ee4abc4ff62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/Stripes01.png using Guid(96671294c2a504cf79255ee4abc4ff62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10649327713f0cccb533a2b5bd8f9235') in 1.277242 seconds
-  Import took 1.284514 seconds .
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 3600.
+Total: 2.767896 ms (FindLiveObjects: 0.410905 ms CreateObjectMapping: 0.156093 ms MarkObjects: 2.049396 ms  DeleteObjects: 0.150022 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000235 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.unity
-  artifactKey: Guid(cfc183812a3e5454180401ba96dd84b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.unity using Guid(cfc183812a3e5454180401ba96dd84b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d262c3d4011c308258983f9b7c4f5fb') in 0.002612 seconds
-  Import took 0.009465 seconds .
+  path: Assets/UIEffect-upm
+  artifactKey: Guid(a42bda05ceebe4a08b41360977924c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UIEffect-upm using Guid(a42bda05ceebe4a08b41360977924c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bec7b18efe5d605a5255a3bb13587107') in 0.007974 seconds
+  Import took 0.014724 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000832 seconds.
+  path: Assets/Shaders/ShineShader/HashChecker.cs
+  artifactKey: Guid(5c1e19abf23c84eef9e9d26a59a97bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/ShineShader/HashChecker.cs using Guid(5c1e19abf23c84eef9e9d26a59a97bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.315519 seconds
+  ERROR: Build asset version error: assets/shaders/shineshader/hashchecker.cs in SourceAssetDB has modification time of '2021-04-20T22:29:00Z' while content on disk has modification time of '2021-04-20T22:30:27Z'
+  Import took 0.320189 seconds .
 
 ========================================================================
 Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 10.09 ms, found 2 plugins.
+Registering precompiled user dll's ...
+Registered in 0.003278 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.4 MB.
-System memory in use after: 173.6 MB.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.114 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2938 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 223.8 MB.
+System memory in use after: 224.0 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3557.
-Total: 3.673250 ms (FindLiveObjects: 0.427635 ms CreateObjectMapping: 0.173581 ms MarkObjects: 3.043137 ms  DeleteObjects: 0.025954 ms)
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3602.
+Total: 2.126297 ms (FindLiveObjects: 0.347732 ms CreateObjectMapping: 0.157362 ms MarkObjects: 1.605653 ms  DeleteObjects: 0.014549 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003049 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.063 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2938 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 224.1 MB.
+System memory in use after: 224.3 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3604.
+Total: 2.807775 ms (FindLiveObjects: 0.422289 ms CreateObjectMapping: 0.218277 ms MarkObjects: 2.147896 ms  DeleteObjects: 0.017673 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004140 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.098 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2938 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 224.3 MB.
+System memory in use after: 224.5 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3606.
+Total: 3.521106 ms (FindLiveObjects: 0.676302 ms CreateObjectMapping: 0.290081 ms MarkObjects: 2.532285 ms  DeleteObjects: 0.019885 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001696 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.980 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2938 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 224.5 MB.
+System memory in use after: 224.8 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3608.
+Total: 2.141424 ms (FindLiveObjects: 0.365859 ms CreateObjectMapping: 0.163519 ms MarkObjects: 1.592522 ms  DeleteObjects: 0.018110 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005139 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.079 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2938 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 224.8 MB.
+System memory in use after: 225.0 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3610.
+Total: 3.465572 ms (FindLiveObjects: 0.688391 ms CreateObjectMapping: 0.279093 ms MarkObjects: 2.475754 ms  DeleteObjects: 0.020102 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 513.516048 seconds.
+  path: Assets/UIEffect-upm/Resources/UIShiny.shader
+  artifactKey: Guid(20ffe76c2439c403aabdd25bd94bf011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UIEffect-upm/Resources/UIShiny.shader using Guid(20ffe76c2439c403aabdd25bd94bf011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72f384c48041dfd2a479e776ccf0bc02') in 1.119878 seconds
+  Import took 1.125436 seconds .
 
 ========================================================================
 Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 5.77 ms, found 2 plugins.
+Registering precompiled user dll's ...
+Registered in 0.003962 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.94 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.6 MB.
-System memory in use after: 173.8 MB.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.039 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2938 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 229.2 MB.
+System memory in use after: 229.5 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3557.
-Total: 2.653871 ms (FindLiveObjects: 0.318241 ms CreateObjectMapping: 0.149707 ms MarkObjects: 2.165097 ms  DeleteObjects: 0.019888 ms)
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3612.
+Total: 2.208200 ms (FindLiveObjects: 0.322041 ms CreateObjectMapping: 0.149434 ms MarkObjects: 1.705410 ms  DeleteObjects: 0.030241 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 610.197410 seconds.
-  path: Assets/Shaders/HologramShader/HologramMat.mat
-  artifactKey: Guid(6c5ae2ab3fd6b4aa9b8cd00fa9445d07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/HologramShader/HologramMat.mat using Guid(6c5ae2ab3fd6b4aa9b8cd00fa9445d07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '317a0204ece162a7e1d10748916d40af') in 2.083078 seconds
-  Import took 2.090446 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000203 seconds.
-  path: Assets/ShaderGraphExamples/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
-  artifactKey: Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ShaderGraphExamples/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat using Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4df788ebb9b1cc7b0211c3515bef4ffd') in 0.223105 seconds
-  Import took 0.227981 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000181 seconds.
-  path: Assets/ShaderGraphExamples/Standard Assets/Prototyping/Materials/NavySmooth.mat
-  artifactKey: Guid(1032d41f900276c40a9dd24f55b7d420) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ShaderGraphExamples/Standard Assets/Prototyping/Materials/NavySmooth.mat using Guid(1032d41f900276c40a9dd24f55b7d420) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '936efb9e7b965140267f5872bf234e02') in 0.333438 seconds
-  Import took 0.338751 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000250 seconds.
-  path: Assets/ShaderGraphExamples/Particles/ParticleMat-Spiral.mat
-  artifactKey: Guid(4fab32ecdb1924ee4957804245ba934d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ShaderGraphExamples/Particles/ParticleMat-Spiral.mat using Guid(4fab32ecdb1924ee4957804245ba934d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fedd77efd07700a479834af685b3c35') in 0.360172 seconds
-  Import took 0.365113 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/TerrainLit.mat
-  artifactKey: Guid(594ea882c5a793440b60ff72d896021e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/TerrainLit.mat using Guid(594ea882c5a793440b60ff72d896021e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c1f02fbd877f31801550a36cb4d6265') in 0.506666 seconds
-  Import took 0.510928 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000242 seconds.
-  path: Assets/ShaderGraphExamples/Standard Assets/Prototyping/Materials/NavyGrid.mat
-  artifactKey: Guid(76ff537c8e1a84345868e6aeee938ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ShaderGraphExamples/Standard Assets/Prototyping/Materials/NavyGrid.mat using Guid(76ff537c8e1a84345868e6aeee938ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd370165b3dfccc68c544eb7a7264e711') in 0.037699 seconds
-  Import took 0.042702 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000175 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat
-  artifactKey: Guid(9dfc825aed78fcd4ba02077103263b40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat using Guid(9dfc825aed78fcd4ba02077103263b40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7ce80e4b5e33de1a93a0d37bcb58525') in 0.090356 seconds
-  Import took 0.095061 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/ShaderGraphExamples/Particles/ParticleMat-BasicSolidCircle.mat
-  artifactKey: Guid(01ed9e8e4432a43848201addc6266d7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ShaderGraphExamples/Particles/ParticleMat-BasicSolidCircle.mat using Guid(01ed9e8e4432a43848201addc6266d7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26806327253668a4875f13a15e83a272') in 0.326459 seconds
-  Import took 0.331745 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000238 seconds.
-  path: Assets/Models/ErikaArcher/Materials/Lashes_MAT.mat
-  artifactKey: Guid(db0e2f9ddfc284851846aa1c43486049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/ErikaArcher/Materials/Lashes_MAT.mat using Guid(db0e2f9ddfc284851846aa1c43486049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7a1c9546547f7e6702abffd6b5a34ae') in 0.180392 seconds
-  Import took 0.184783 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Assets/ShaderGraphExamples/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
-  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ShaderGraphExamples/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4232b38fad4558bec4ef76d7992c077') in 0.209039 seconds
-  Import took 0.214132 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000254 seconds.
-  path: Assets/Models/FSCZuk/materials/material_0.mat
-  artifactKey: Guid(b7de943d3e631480989dab2e97d9164f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/FSCZuk/materials/material_0.mat using Guid(b7de943d3e631480989dab2e97d9164f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bd4d93d48b0da5b62c0d2eb08a156d6') in 0.274667 seconds
-  Import took 0.279722 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000207 seconds.
-  path: Assets/ShaderGraphExamples/PrimitiveMeshes/uv_sphere.FBX
-  artifactKey: Guid(2073fa6fb6a47ef4f891e91c8e9463b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ShaderGraphExamples/PrimitiveMeshes/uv_sphere.FBX using Guid(2073fa6fb6a47ef4f891e91c8e9463b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1e1c020d0be2f719088e428bb8390a5') in 0.792922 seconds
-  Import took 0.797611 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000219 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat
-  artifactKey: Guid(a97c105638bdf8b4a8650670310a4cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat using Guid(a97c105638bdf8b4a8650670310a4cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69bd470a792501577019aa6118f50071') in 0.028005 seconds
-  Import took 0.032963 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000236 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat
-  artifactKey: Guid(31321ba15b8f8eb4c954353edc038b1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat using Guid(31321ba15b8f8eb4c954353edc038b1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da3d1ca7e6ca3a3c18818ccb03967d3d') in 0.013044 seconds
-  Import took 0.017995 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Assets/New Material.mat
-  artifactKey: Guid(7345fc2cb0f3046668b5fc011b646d7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Material.mat using Guid(7345fc2cb0f3046668b5fc011b646d7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4637420b257c39a277ffe1ca00cf6e95') in 0.011201 seconds
-  Import took 0.015613 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000197 seconds.
-  path: Assets/ShaderGraphExamples/Particles/ParticleMat-BasicSoftCircle.mat
-  artifactKey: Guid(9d729b032bcd243a381b2e452950469f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ShaderGraphExamples/Particles/ParticleMat-BasicSoftCircle.mat using Guid(9d729b032bcd243a381b2e452950469f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0124e26353dba7ec829c531c123d3302') in 0.318992 seconds
-  Import took 0.323369 seconds .
-
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 9.43 ms, found 2 plugins.
+Registering precompiled user dll's ...
+Registered in 0.004466 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 182.4 MB.
-System memory in use after: 182.7 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3663.
-Total: 3.665684 ms (FindLiveObjects: 0.500498 ms CreateObjectMapping: 0.176444 ms MarkObjects: 2.969767 ms  DeleteObjects: 0.017756 ms)
-
-========================================================================
-Received Prepare
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.142 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 11.28 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 182.5 MB.
-System memory in use after: 182.7 MB.
+Unloading 2938 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 229.5 MB.
+System memory in use after: 229.7 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3663.
-Total: 3.763863 ms (FindLiveObjects: 0.474159 ms CreateObjectMapping: 0.238013 ms MarkObjects: 3.033186 ms  DeleteObjects: 0.017207 ms)
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3614.
+Total: 2.225370 ms (FindLiveObjects: 0.351637 ms CreateObjectMapping: 0.158374 ms MarkObjects: 1.698035 ms  DeleteObjects: 0.016140 ms)
 
-========================================================================
-Received Prepare
-Switching render pipeline 00000000000000000000000000000000 -> 19ba41d7c0026c3459d37c2fe90c55a0
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 5.47 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 192.7 MB.
-System memory in use after: 192.9 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3664.
-Total: 2.603013 ms (FindLiveObjects: 0.331554 ms CreateObjectMapping: 0.149684 ms MarkObjects: 2.100470 ms  DeleteObjects: 0.020105 ms)
-
-========================================================================
-Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 7.58 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 192.8 MB.
-System memory in use after: 193.1 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3664.
-Total: 2.717377 ms (FindLiveObjects: 0.320822 ms CreateObjectMapping: 0.151257 ms MarkObjects: 2.222896 ms  DeleteObjects: 0.021306 ms)
-
-========================================================================
-Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 6.71 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 193.1 MB.
-System memory in use after: 193.3 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3664.
-Total: 3.768628 ms (FindLiveObjects: 0.450190 ms CreateObjectMapping: 0.229816 ms MarkObjects: 3.070804 ms  DeleteObjects: 0.016615 ms)
-
-========================================================================
-Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 3.92 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 193.3 MB.
-System memory in use after: 193.5 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3664.
-Total: 3.030017 ms (FindLiveObjects: 0.368821 ms CreateObjectMapping: 0.142579 ms MarkObjects: 2.497833 ms  DeleteObjects: 0.019499 ms)
-
-========================================================================
-Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 7.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 193.5 MB.
-System memory in use after: 193.8 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3664.
-Total: 3.258470 ms (FindLiveObjects: 0.401372 ms CreateObjectMapping: 0.200182 ms MarkObjects: 2.639706 ms  DeleteObjects: 0.016208 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 2432.000962 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.shadergraph
-  artifactKey: Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.shadergraph using Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1111e681d6e834b582892523c480275') in 0.218174 seconds
-  Import took 0.224766 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 58.956674 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.shadergraph
-  artifactKey: Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.shadergraph using Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92030fcb5eb2b2081f8469b2083345e9') in 0.006596 seconds
-  Import took 0.012441 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 29.470361 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation.shadergraph
-  artifactKey: Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation.shadergraph using Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fd6d565e01b0f8bb19fdcb8f27a2c17') in 0.005522 seconds
-  Import took 0.010733 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 54.088090 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation 1.shadergraph
-  artifactKey: Guid(141c73503c41c4b9c9fc27bc6829cdba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation 1.shadergraph using Guid(141c73503c41c4b9c9fc27bc6829cdba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c5a7abf69406ad8a82dd873cfb87b7b') in 0.006932 seconds
-  Import took 0.012797 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.734597 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation.shadergraph
-  artifactKey: Guid(141c73503c41c4b9c9fc27bc6829cdba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation.shadergraph using Guid(141c73503c41c4b9c9fc27bc6829cdba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b2bcee29064e3d7dcda15b23ac6b2ef') in 0.005045 seconds
-  Import took 0.010443 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 45.489897 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation.shadergraph
-  artifactKey: Guid(141c73503c41c4b9c9fc27bc6829cdba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation.shadergraph using Guid(141c73503c41c4b9c9fc27bc6829cdba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34a4f67a8c722e38c377540d709eee00') in 0.004969 seconds
-  Import took 0.010043 seconds .
-
-========================================================================
-Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 7.65 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 197.9 MB.
-System memory in use after: 198.1 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3664.
-Total: 2.870183 ms (FindLiveObjects: 0.674350 ms CreateObjectMapping: 0.213873 ms MarkObjects: 1.967372 ms  DeleteObjects: 0.013133 ms)
-
-========================================================================
-Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 8.52 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 198.1 MB.
-System memory in use after: 198.4 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3664.
-Total: 3.166487 ms (FindLiveObjects: 0.427513 ms CreateObjectMapping: 0.197112 ms MarkObjects: 2.525071 ms  DeleteObjects: 0.015604 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 358.441138 seconds.
-  path: Assets/Shaders/_CommonSubShaders/TextureTileOffsetRotate_SubGraph.shadersubgraph
-  artifactKey: Guid(40650203b9ea24c17b2d6667486935ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/_CommonSubShaders/TextureTileOffsetRotate_SubGraph.shadersubgraph using Guid(40650203b9ea24c17b2d6667486935ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9eab193fd5f43145b5dbe126d0b6df70') in 0.217864 seconds
-  Import took 0.226945 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.342428 seconds.
-  path: Assets/Shaders/_CommonSubShaders/TextureTileOffsetRotate_SubGraph 1.shadersubgraph
-  artifactKey: Guid(6ed856b0ca77649bca993c43629ac9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/_CommonSubShaders/TextureTileOffsetRotate_SubGraph 1.shadersubgraph using Guid(6ed856b0ca77649bca993c43629ac9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b15368f0c2c402aa8f9a023f56206506') in 0.003495 seconds
-  Import took 0.009882 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.173339 seconds.
-  path: Assets/Shaders/_CommonSubShaders/TextureTileOffset_SubGraph.shadersubgraph
-  artifactKey: Guid(6ed856b0ca77649bca993c43629ac9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/_CommonSubShaders/TextureTileOffset_SubGraph.shadersubgraph using Guid(6ed856b0ca77649bca993c43629ac9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec8ba3a257b00eac1df7f662e8bc022e') in 0.003902 seconds
-  Import took 0.011560 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.727430 seconds.
-  path: Assets/Shaders/_CommonSubShaders/TextureTileOffset_SubGraph.shadersubgraph
-  artifactKey: Guid(6ed856b0ca77649bca993c43629ac9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/_CommonSubShaders/TextureTileOffset_SubGraph.shadersubgraph using Guid(6ed856b0ca77649bca993c43629ac9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85c5d57e147e05720b48dc2274af6fd9') in 0.002756 seconds
-  Import took 0.008527 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 50.590286 seconds.
-  path: Assets/Shaders/_CommonSubShaders/TextureTileOffset_SubGraph.shadersubgraph
-  artifactKey: Guid(6ed856b0ca77649bca993c43629ac9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/_CommonSubShaders/TextureTileOffset_SubGraph.shadersubgraph using Guid(6ed856b0ca77649bca993c43629ac9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44becdbda3da995531060fabd5ead0c1') in 0.006761 seconds
-  Import took 0.012495 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.237845 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation.shadergraph
-  artifactKey: Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation.shadergraph using Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43063eb0b71766e36f4e3ffe98c2344f') in 0.001913 seconds
-  Import took 0.007595 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.009184 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation.shadergraph
-  artifactKey: Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation.shadergraph using Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43063eb0b71766e36f4e3ffe98c2344f') in 0.001795 seconds
-  Import took 0.006487 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.487044 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation.shadergraph
-  artifactKey: Guid(141c73503c41c4b9c9fc27bc6829cdba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation.shadergraph using Guid(141c73503c41c4b9c9fc27bc6829cdba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca42cdd576d32a8810d17484a1723873') in 0.002573 seconds
-  Import took 0.008991 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.006416 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation.shadergraph
-  artifactKey: Guid(141c73503c41c4b9c9fc27bc6829cdba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation.shadergraph using Guid(141c73503c41c4b9c9fc27bc6829cdba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca42cdd576d32a8810d17484a1723873') in 0.002458 seconds
-  Import took 0.007308 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.719951 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation 1.shadergraph
-  artifactKey: Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation 1.shadergraph using Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db617e0ce558505cef837ed1f97940fc') in 0.002871 seconds
-  Import took 0.008450 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000740 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation 1.shadergraph
-  artifactKey: Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask_wRotation 1.shadergraph using Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db617e0ce558505cef837ed1f97940fc') in 0.002764 seconds
-  Import took 0.007025 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.435895 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask.shadergraph
-  artifactKey: Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask.shadergraph using Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68bbec51c4d9a3be58f9fcad590c92de') in 0.002964 seconds
-  Import took 0.008363 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.307397 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask 1.shadergraph
-  artifactKey: Guid(e190e203f07eb485390a891f05e5a3ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask 1.shadergraph using Guid(e190e203f07eb485390a891f05e5a3ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bed1e0825e8a69adf48aba2ed7f534c0') in 0.003378 seconds
-  Import took 0.009279 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.720577 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation 1.shadergraph
-  artifactKey: Guid(1f094722b86cc4ac381a4fb536c8e606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation 1.shadergraph using Guid(1f094722b86cc4ac381a4fb536c8e606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4f3d15a2b4ddc563f72568aab803f37') in 0.003282 seconds
-  Import took 0.009013 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.305235 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.shadergraph
-  artifactKey: Guid(1f094722b86cc4ac381a4fb536c8e606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.shadergraph using Guid(1f094722b86cc4ac381a4fb536c8e606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00b75611bdadc8aefe9700ff3cfabe85') in 0.002252 seconds
-  Import took 0.007830 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 214.114806 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/Stripes02.png
-  artifactKey: Guid(58a04f5dd3a3649e491a11c1dd19d978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/Stripes02.png using Guid(58a04f5dd3a3649e491a11c1dd19d978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '304e398fed2939a5451314db84a5fcac') in 0.020068 seconds
-  Import took 0.026105 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.237065 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/Stripes01.png
-  artifactKey: Guid(96671294c2a504cf79255ee4abc4ff62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/Stripes01.png using Guid(96671294c2a504cf79255ee4abc4ff62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8828214b6c843e472889aa09ab11d97f') in 0.007480 seconds
-  Import took 0.013222 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.660233 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask.shadergraph
-  artifactKey: Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask.shadergraph using Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34f7d5916e4049354b4b647eeab059e5') in 0.003004 seconds
-  Import took 0.008189 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.294272 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask.shadergraph
-  artifactKey: Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wMask.shadergraph using Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34f7d5916e4049354b4b647eeab059e5') in 0.002130 seconds
-  Import took 0.007247 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.092081 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.unity
-  artifactKey: Guid(cfc183812a3e5454180401ba96dd84b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.unity using Guid(cfc183812a3e5454180401ba96dd84b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53f3cf69a887132f941dca2cd66b8f89') in 0.002554 seconds
-  Import took 0.007669 seconds .
-
-========================================================================
-Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 7.21 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 202.6 MB.
-System memory in use after: 202.8 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3664.
-Total: 4.290296 ms (FindLiveObjects: 0.492180 ms CreateObjectMapping: 0.222540 ms MarkObjects: 3.557938 ms  DeleteObjects: 0.016449 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 448.024562 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.shadergraph
-  artifactKey: Guid(1f094722b86cc4ac381a4fb536c8e606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.shadergraph using Guid(1f094722b86cc4ac381a4fb536c8e606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afc9db7963181158cdb6119f747550f7') in 0.002798 seconds
-  Import took 0.009396 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.876953 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_Default.shadergraph
-  artifactKey: Guid(1f094722b86cc4ac381a4fb536c8e606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_Default.shadergraph using Guid(1f094722b86cc4ac381a4fb536c8e606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca9911a0c1e3b1a625e1f9917d9aaf12') in 0.003229 seconds
-  Import took 0.008296 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.660751 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.unity
-  artifactKey: Guid(cfc183812a3e5454180401ba96dd84b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader.unity using Guid(cfc183812a3e5454180401ba96dd84b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d4f8f3f9582607849186a09699f9924') in 0.004168 seconds
-  Import took 0.009922 seconds .
-
-========================================================================
-Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 12.45 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 203.0 MB.
-System memory in use after: 203.3 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3664.
-Total: 3.498943 ms (FindLiveObjects: 0.395905 ms CreateObjectMapping: 0.200888 ms MarkObjects: 2.877563 ms  DeleteObjects: 0.023554 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 438.994939 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_Default.shadergraph
-  artifactKey: Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_Default.shadergraph using Guid(b85302e6627c949e69ba3053323a8dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b73a4345244f1f62325f21cc43cee6d6') in 0.002329 seconds
-  Import took 0.008091 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.625341 seconds.
-  path: Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation.shadergraph
-  artifactKey: Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/ScrollingTextureShader/ScrollingTextureShader_wRotation.shadergraph using Guid(2397951ef272a47d6af5b674072eb7ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbdaf28d04a4d6a1c7f8ed9faad17647') in 0.001748 seconds
-  Import took 0.007279 seconds .
-
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
