@@ -1,18 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using JetBrains.Annotations;
+using Shaders.Editor;
+using UnityEditor;
 
-public class ShineShaderEditor : MonoBehaviour
+[CanEditMultipleObjects]
+[UsedImplicitly]
+public class ShineShaderEditor : ShaderGUIBase
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override ShaderGUISectionData[] shaderSectionData { get; } = new ShaderGUISectionData[2]
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        new ShaderGUISectionData("Transform", "_ShineLocation", "_ShineWidth", "_RotateAngle"),
+        new ShaderGUISectionData("Visual", "_ShineMask", "_ShineGlow", "_ShineColor")
+    };
 }

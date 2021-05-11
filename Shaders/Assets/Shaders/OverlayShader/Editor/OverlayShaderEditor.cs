@@ -6,13 +6,8 @@ using UnityEditor;
 [UsedImplicitly]
 public class OverlayShaderEditor : ShaderGUIBase
 {
-    private static readonly string[] overlayGlowProperties = new string[1]
+    protected override ShaderGUISectionData[] shaderSectionData { get; } = new ShaderGUISectionData[1]
     {
-        "_Glow"
+        new ShaderGUISectionData("Glow", "_Glow")
     };
-    
-    protected override void OnGUICustomActions()
-    {
-        DrawSection("Glow", overlayGlowProperties);
-    }
 }

@@ -5,7 +5,9 @@ using UnityEngine;
 namespace Shaders.Editor
 {
     public abstract class ShaderGUIBase : ShaderGUI
-    {    
+    {
+        protected abstract ShaderGUISectionData[] shaderSectionData { get; }
+
         private Material targetMaterial;
         private Material originalMaterialCopy;
         private MaterialEditor materialEditor;
@@ -13,8 +15,6 @@ namespace Shaders.Editor
     
         private GUIStyle labelStyle;
         private const int fontSize = 14;
-    
-        protected abstract void OnGUICustomActions();
 
         protected virtual bool CanDrawRenderingProperties()
         {
@@ -25,10 +25,16 @@ namespace Shaders.Editor
         {
             Setup(materialEditor, properties);
 
-            OnGUICustomActions();
+            DrawSections();
 
             if (CanDrawRenderingProperties())
                 DrawRenderingProperties();
+        }
+
+        private void DrawSections()
+        {
+            for (int i = 0; i < shaderSectionData.Length; i++)
+                DrawSection(shaderSectionData[i].Header, shaderSectionData[i].Properties);
         }
 
         private void DrawRenderingProperties()
