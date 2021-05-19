@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Rendering;
 
 public class BlurEffect : MonoBehaviour
@@ -15,24 +12,65 @@ public class BlurEffect : MonoBehaviour
     [SerializeField, Range(1, 16)]
     private int downScaleCount = 1;
 
-    [SerializeField]
-    private CameraEvent cameraEvent;
-    
     private CommandBuffer commandBuffer;
-
+    private bool isBlurActive;
+    private static readonly int BlurPowerID = Shader.PropertyToID("_BlurPower");
+    
     private void Awake()
     {
         commandBuffer = new CommandBuffer();
+    }
 
+    private void OnEnable()
+    {
+        RenderBlur();
+    }
+
+    private void OnDisable()
+    {
+        ClearBlur();
+    }
+
+    private void OnDestroy()
+    {
+        ClearBlur();
+    }
+
+    public void ToggleBlur(bool activate)
+    {
+        if (activate)
+            RenderBlur();
+        else
+            ClearBlur();
+    }
+
+    private void RenderBlur()
+    {
+        if(isBlurActive)
+            return;
+        
+        isBlurActive = true;
         camera.forceIntoRenderTexture = true;
         
+        bloomMaterial.SetFloat(BlurPowerID, 1);
+
         DownScale();
         UpScale();
         RenderToCamera();
     }
 
-    private void OnDestroy()
+    private void ClearBlur()
     {
+        if(!isBlurActive)
+            return;
+        
+        isBlurActive = false;
+        camera.forceIntoRenderTexture = false;
+
+        bloomMaterial.SetFloat(BlurPowerID, 0);
+
+        commandBuffer.Clear();
+
         camera.RemoveAllCommandBuffers();
     }
 
@@ -87,6 +125,6 @@ public class BlurEffect : MonoBehaviour
         
         commandBuffer.Blit(src, BuiltinRenderTextureType.CameraTarget, bloomMaterial);
 
-        camera.AddCommandBuffer(cameraEvent, commandBuffer);
+        camera.AddCommandBuffer(CameraEvent.AfterForwardAlpha, commandBuffer);
     }
 }
