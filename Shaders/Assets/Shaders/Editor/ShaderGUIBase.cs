@@ -15,7 +15,7 @@ namespace Shaders.Editor
     
         private GUIStyle labelStyle;
         private const int fontSize = 14;
-
+        
         protected virtual bool CanDrawRenderingProperties()
         {
             return true;
@@ -60,18 +60,7 @@ namespace Shaders.Editor
             };
         }
 
-        protected void DrawSection(string header, params int[] propertyIndexes)
-        {
-            GUILayout.Label(header, labelStyle);
-
-            for (int i = 0; i < propertyIndexes.Length; i++)
-                DrawProperty(propertyIndexes[i]);
-        
-            DrawLine(Color.grey, 1, 3);
-            EditorGUILayout.Separator();
-        }
-    
-        protected void DrawSection(string header, params string[] propertyIndexes)
+        private void DrawSection(string header, params string[] propertyIndexes)
         {
             GUILayout.Label(header, labelStyle);
 

@@ -770,14 +770,14 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 107
     mosaicPosition: {x: 0, y: 0}
   - name: Hats
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 181
     mosaicPosition: {x: 0, y: 0}
   - name: Hat_01
@@ -791,7 +791,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 176
     mosaicPosition: {x: 0, y: 0}
   - name: Glasses_03
@@ -805,14 +805,14 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 123
     mosaicPosition: {x: 0, y: 0}
   - name: Forearm L
     spriteName: 
     isGroup: 1
     parentIndex: 5
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 696
     mosaicPosition: {x: 0, y: 0}
   - name: Bracelet_01_L
@@ -826,7 +826,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 6
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 1145
     mosaicPosition: {x: 0, y: 0}
   - name: Glove_L_Open_01
@@ -847,7 +847,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 6
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 1143
     mosaicPosition: {x: 0, y: 0}
   - name: Glove_L_Closed_01
@@ -875,7 +875,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 5
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 698
     mosaicPosition: {x: 0, y: 0}
   - name: Shoulder_L_001
@@ -896,14 +896,14 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 112
     mosaicPosition: {x: 0, y: 0}
   - name: Head_001
     spriteName: 
     isGroup: 1
     parentIndex: 18
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 192
     mosaicPosition: {x: 0, y: 0}
   - name: Head_Male_001_v1
@@ -917,7 +917,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 120
     mosaicPosition: {x: 0, y: 0}
   - name: Body_Male_001
@@ -938,14 +938,14 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 127
     mosaicPosition: {x: 0, y: 0}
   - name: Shoes L
     spriteName: 
     isGroup: 1
     parentIndex: 24
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 716
     mosaicPosition: {x: 0, y: 0}
   - name: 02_Sneakers_L
@@ -966,7 +966,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 24
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 706
     mosaicPosition: {x: 0, y: 0}
   - name: Shorts_L_001
@@ -987,7 +987,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 24
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 704
     mosaicPosition: {x: 0, y: 0}
   - name: LowerLeg_L_White
@@ -1001,14 +1001,14 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 141
     mosaicPosition: {x: 0, y: 0}
   - name: Shoes R
     spriteName: 
     isGroup: 1
     parentIndex: 33
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 714
     mosaicPosition: {x: 0, y: 0}
   - name: 01_Sneakers_R
@@ -1022,7 +1022,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 33
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 708
     mosaicPosition: {x: 0, y: 0}
   - name: Shorts_R_001
@@ -1043,7 +1043,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 33
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 710
     mosaicPosition: {x: 0, y: 0}
   - name: LowerLeg_R_White
@@ -1057,14 +1057,14 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 136
     mosaicPosition: {x: 0, y: 0}
   - name: Forearm R
     spriteName: 
     isGroup: 1
     parentIndex: 41
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 700
     mosaicPosition: {x: 0, y: 0}
   - name: Bracelet_01_R
@@ -1078,7 +1078,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 42
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 1149
     mosaicPosition: {x: 0, y: 0}
   - name: Glove_R_Open_01
@@ -1099,7 +1099,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 42
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 1147
     mosaicPosition: {x: 0, y: 0}
   - name: Glove_R_Closed_01
@@ -1127,7 +1127,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 41
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 702
     mosaicPosition: {x: 0, y: 0}
   - name: Shoulder_R_001

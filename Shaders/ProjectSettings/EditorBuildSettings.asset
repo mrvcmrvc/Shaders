@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Shaders/InProgress/SpriteGlowShader/SpriteGlowScene 1.unity
-    guid: 042bf7463e8cd4ae3941c9608930a4e2
+    path: Assets/Shaders/InProgress/BlurShader/Demo/BlurShader.unity
+    guid: 91f4f531f4c804b5bb1cf0d0b09222f3
   m_configObjects: {}
