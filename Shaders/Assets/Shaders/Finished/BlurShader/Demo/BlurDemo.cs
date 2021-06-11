@@ -11,7 +11,6 @@ public class BlurDemo : MonoBehaviour
     [SerializeField]
     private Canvas targetCanvas;
     
-
     private void Awake()
     {
         Application.targetFrameRate = 60;
@@ -22,7 +21,7 @@ public class BlurDemo : MonoBehaviour
         #region Activate / Deactivate Blur
 
         if (Input.GetKeyUp(KeyCode.A))
-            blurController.SetActive(!blurController.IsBlurActive);
+            blurController.SetActive(!blurController.enabled);
 
         #endregion
 

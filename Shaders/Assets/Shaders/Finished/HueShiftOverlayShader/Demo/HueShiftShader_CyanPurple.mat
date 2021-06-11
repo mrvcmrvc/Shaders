@@ -61,7 +61,7 @@ Material:
     - _HueShift: 0
     - _Intensity: 3.24
     - _OverlayBlend: 1
-    - _OverlayGlow: 2.5
+    - _OverlayGlow: 1.5
     - _OverlayIntensity: 1
     - _OverlayPower: 1
     - _Saturation: 0

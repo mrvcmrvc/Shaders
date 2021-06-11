@@ -57,17 +57,17 @@ Material:
     - _Glow2: 1
     - _HueChangeAmount: 0.06
     - _HueChangeLit: 0
-    - _HueChangeUnlit: -0.04
+    - _HueChangeUnlit: -0.032
     - _HueShift: 0
     - _Intensity: 3.24
     - _OverlayBlend: 1
-    - _OverlayGlow: 3
+    - _OverlayGlow: 1.5
     - _OverlayIntensity: 1
     - _OverlayPower: 1
     - _Saturation: 0
     - _SaturationChangeAmount: -0.017
     - _SaturationChangeLit: 0.747
-    - _SaturationChangeUnlit: 0
+    - _SaturationChangeUnlit: -0.204
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
