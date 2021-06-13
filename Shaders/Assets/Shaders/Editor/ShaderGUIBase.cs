@@ -41,7 +41,8 @@ namespace Shaders.Editor
         {
             GUILayout.Label("Rendering Settings", labelStyle);
 
-            DrawProperty(8);
+            if(targetMaterial.HasProperty("_UseUIAlphaClip"))
+                DrawProperty(GetPropertyIndex("_UseUIAlphaClip"));
 
             EditorGUI.indentLevel++;
             materialEditor.RenderQueueField();

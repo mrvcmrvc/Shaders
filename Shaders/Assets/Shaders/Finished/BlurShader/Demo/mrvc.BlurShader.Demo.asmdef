@@ -1,0 +1,15 @@
+{
+    "name": "mrvc.BlurShader.Demo",
+    "references": [
+        "GUID:e13efacdc9b7142db825aeabfa2492e5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

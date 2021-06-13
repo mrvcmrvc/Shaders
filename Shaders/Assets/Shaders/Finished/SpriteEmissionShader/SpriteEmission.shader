@@ -1,6 +1,6 @@
 // Made with Amplify Shader Editor
 // Available at the Unity Asset Store - http://u3d.as/y3X 
-Shader "mrvc/HDRSprite"
+Shader "mrvc/SpriteEmission"
 {
 	Properties
 	{
@@ -8,7 +8,7 @@ Shader "mrvc/HDRSprite"
 		_Color ("Tint", Color) = (1,1,1,1)
 		[MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
 		[PerRendererData] _AlphaTex ("External Alpha", 2D) = "white" {}
-		[Toggle]_Emission("Emission", Float) = 0
+		[Toggle]_Emission("Emission", Float) = 1
 		[HDR]_HDR("HDR", Color) = (0,0,0,0)
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 
@@ -119,13 +119,13 @@ Shader "mrvc/HDRSprite"
 		ENDCG
 		}
 	}
-	CustomEditor "ASEMaterialInspector"
+	CustomEditor "SpriteEmissionShaderEditor"
 	
 	
 }
 /*ASEBEGIN
 Version=18800
-195;-1344;2096;1124;1125.242;701.4584;1;True;True
+410;-1333;2096;1124;860.4608;727.9194;1;True;True
 Node;AmplifyShaderEditor.TemplateShaderPropertyNode;3;-741,-199;Inherit;False;0;0;_MainTex;Shader;False;0;5;SAMPLER2D;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SamplerNode;4;-578,-197;Inherit;True;Property;_TextureSample0;Texture Sample 0;0;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.ColorNode;2;-486,126;Inherit;False;Property;_HDR;HDR;1;1;[HDR];Create;True;0;0;0;False;0;False;0,0,0,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
@@ -138,8 +138,8 @@ Node;AmplifyShaderEditor.SimpleMultiplyOpNode;5;-80,43;Inherit;False;2;2;0;FLOAT
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;26;-74.2417,-381.4584;Inherit;False;2;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.DynamicAppendNode;8;66,-121;Inherit;False;FLOAT4;4;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT4;0
 Node;AmplifyShaderEditor.DynamicAppendNode;22;66.7583,-246.4584;Inherit;False;FLOAT4;4;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT4;0
-Node;AmplifyShaderEditor.ToggleSwitchNode;13;217,-194;Inherit;False;Property;_Emission;Emission;0;0;Create;True;0;0;0;False;0;False;0;2;0;FLOAT4;0,0,0,0;False;1;FLOAT4;0,0,0,0;False;1;FLOAT4;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;434,-190;Float;False;True;-1;2;ASEMaterialInspector;0;8;mrvc/HDRSprite;0f8ba0101102bb14ebf021ddadce9b49;True;SubShader 0 Pass 0;0;0;SubShader 0 Pass 0;2;True;3;1;False;-1;10;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;True;2;False;-1;False;False;False;False;False;True;2;False;-1;False;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;0;;0;0;Standard;0;0;1;True;False;;False;0
+Node;AmplifyShaderEditor.ToggleSwitchNode;13;217,-194;Inherit;False;Property;_Emission;Emission;0;0;Create;True;0;0;0;False;0;False;1;2;0;FLOAT4;0,0,0,0;False;1;FLOAT4;0,0,0,0;False;1;FLOAT4;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;434,-190;Float;False;True;-1;2;SpriteEmissionShaderEditor;0;8;mrvc/SpriteEmission;0f8ba0101102bb14ebf021ddadce9b49;True;SubShader 0 Pass 0;0;0;SubShader 0 Pass 0;2;True;3;1;False;-1;10;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;True;2;False;-1;False;False;False;False;False;True;2;False;-1;False;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;0;;0;0;Standard;0;0;1;True;False;;False;0
 WireConnection;4;0;3;0
 WireConnection;15;0;2;0
 WireConnection;14;0;4;0
@@ -157,4 +157,4 @@ WireConnection;13;0;22;0
 WireConnection;13;1;8;0
 WireConnection;1;0;13;0
 ASEEND*/
-//CHKSM=488C63CC2754EC77C962F82BE16DA6ED9E48C4B8
+//CHKSM=B59D99E0E3DD3438DCD52FE9066F629551F2BA64

@@ -1,0 +1,15 @@
+{
+    "name": "mrvc.BloomShader.Demo",
+    "references": [
+        "GUID:a919c8aa6af5746ac82cc481495b5edc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
