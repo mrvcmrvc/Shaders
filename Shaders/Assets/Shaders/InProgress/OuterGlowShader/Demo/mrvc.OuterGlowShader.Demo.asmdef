@@ -1,0 +1,15 @@
+{
+    "name": "mrvc.OuterGlowShader.Demo",
+    "references": [
+        "GUID:8f19b3a1d597840a786cee5c1d9d821c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
