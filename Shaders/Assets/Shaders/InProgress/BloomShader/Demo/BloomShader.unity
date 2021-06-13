@@ -428,8 +428,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloomShader: {fileID: 4800000, guid: c122d577c06fd48838fa0808501ea320, type: 3}
-  mainCamera: {fileID: 59806330}
   downScaleCount: 8
+  transitionDuration: 0.25
   threshold: 2
   softThreshold: 0.5
   intensity: 1

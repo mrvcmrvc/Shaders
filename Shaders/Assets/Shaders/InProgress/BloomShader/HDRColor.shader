@@ -8,6 +8,7 @@ Shader "mrvc/HDRSprite"
 		_Color ("Tint", Color) = (1,1,1,1)
 		[MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
 		[PerRendererData] _AlphaTex ("External Alpha", 2D) = "white" {}
+		[Toggle]_Emission("Emission", Float) = 0
 		[HDR]_HDR("HDR", Color) = (0,0,0,0)
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 
@@ -38,7 +39,8 @@ Shader "mrvc/HDRSprite"
 			#pragma multi_compile _ PIXELSNAP_ON
 			#pragma multi_compile _ ETC1_EXTERNAL_ALPHA
 			#include "UnityCG.cginc"
-			
+			#define ASE_NEEDS_FRAG_COLOR
+
 
 			struct appdata_t
 			{
@@ -63,6 +65,7 @@ Shader "mrvc/HDRSprite"
 			uniform float _EnableExternalAlpha;
 			uniform sampler2D _MainTex;
 			uniform sampler2D _AlphaTex;
+			uniform float _Emission;
 			uniform float4 _MainTex_ST;
 			uniform float4 _HDR;
 
@@ -106,11 +109,10 @@ Shader "mrvc/HDRSprite"
 
 				float2 uv_MainTex = IN.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 				float4 tex2DNode4 = tex2D( _MainTex, uv_MainTex );
-				float3 appendResult6 = (float3(tex2DNode4.r , tex2DNode4.g , tex2DNode4.b));
-				float3 appendResult7 = (float3(_HDR.r , _HDR.g , _HDR.b));
-				float4 appendResult8 = (float4(( appendResult6 * appendResult7 ) , tex2DNode4.a));
+				float4 appendResult22 = (float4(( (IN.color).rgb * (tex2DNode4).rgb ) , tex2DNode4.a));
+				float4 appendResult8 = (float4(( (tex2DNode4).rgb * (_HDR).rgb ) , tex2DNode4.a));
 				
-				fixed4 c = appendResult8;
+				fixed4 c = (( _Emission )?( appendResult8 ):( appendResult22 ));
 				c.rgb *= c.a;
 				return c;
 			}
@@ -123,26 +125,36 @@ Shader "mrvc/HDRSprite"
 }
 /*ASEBEGIN
 Version=18800
-198;-1343;2096;1124;1218;416;1;True;False
+195;-1344;2096;1124;1125.242;701.4584;1;True;True
 Node;AmplifyShaderEditor.TemplateShaderPropertyNode;3;-741,-199;Inherit;False;0;0;_MainTex;Shader;False;0;5;SAMPLER2D;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SamplerNode;4;-578,-197;Inherit;True;Property;_TextureSample0;Texture Sample 0;0;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;2;-494,13;Inherit;False;Property;_HDR;HDR;0;1;[HDR];Create;True;0;0;0;False;0;False;0,0,0,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.DynamicAppendNode;6;-266,-168;Inherit;False;FLOAT3;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0
-Node;AmplifyShaderEditor.DynamicAppendNode;7;-272,42;Inherit;False;FLOAT3;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0
-Node;AmplifyShaderEditor.SimpleMultiplyOpNode;5;-100,-112;Inherit;False;2;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0
-Node;AmplifyShaderEditor.DynamicAppendNode;8;57,-113;Inherit;False;FLOAT4;4;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT4;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;206,-112;Float;False;True;-1;2;ASEMaterialInspector;0;8;mrvc/HDRSprite;0f8ba0101102bb14ebf021ddadce9b49;True;SubShader 0 Pass 0;0;0;SubShader 0 Pass 0;2;True;3;1;False;-1;10;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;True;2;False;-1;False;False;False;False;False;True;2;False;-1;False;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;0;;0;0;Standard;0;0;1;True;False;;False;0
+Node;AmplifyShaderEditor.ColorNode;2;-486,126;Inherit;False;Property;_HDR;HDR;1;1;[HDR];Create;True;0;0;0;False;0;False;0,0,0,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.VertexColorNode;17;-447.2417,-372.4584;Inherit;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ComponentMaskNode;15;-267,85;Inherit;False;True;True;True;False;1;0;COLOR;0,0,0,0;False;1;FLOAT3;0
+Node;AmplifyShaderEditor.ComponentMaskNode;14;-267,4;Inherit;False;True;True;True;False;1;0;COLOR;0,0,0,0;False;1;FLOAT3;0
+Node;AmplifyShaderEditor.ComponentMaskNode;23;-261.2417,-403.4584;Inherit;False;True;True;True;False;1;0;COLOR;0,0,0,0;False;1;FLOAT3;0
+Node;AmplifyShaderEditor.ComponentMaskNode;24;-263.2417,-322.9584;Inherit;False;True;True;True;False;1;0;COLOR;0,0,0,0;False;1;FLOAT3;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;5;-80,43;Inherit;False;2;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;26;-74.2417,-381.4584;Inherit;False;2;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0
+Node;AmplifyShaderEditor.DynamicAppendNode;8;66,-121;Inherit;False;FLOAT4;4;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT4;0
+Node;AmplifyShaderEditor.DynamicAppendNode;22;66.7583,-246.4584;Inherit;False;FLOAT4;4;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT4;0
+Node;AmplifyShaderEditor.ToggleSwitchNode;13;217,-194;Inherit;False;Property;_Emission;Emission;0;0;Create;True;0;0;0;False;0;False;0;2;0;FLOAT4;0,0,0,0;False;1;FLOAT4;0,0,0,0;False;1;FLOAT4;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;434,-190;Float;False;True;-1;2;ASEMaterialInspector;0;8;mrvc/HDRSprite;0f8ba0101102bb14ebf021ddadce9b49;True;SubShader 0 Pass 0;0;0;SubShader 0 Pass 0;2;True;3;1;False;-1;10;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;True;2;False;-1;False;False;False;False;False;True;2;False;-1;False;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;0;;0;0;Standard;0;0;1;True;False;;False;0
 WireConnection;4;0;3;0
-WireConnection;6;0;4;1
-WireConnection;6;1;4;2
-WireConnection;6;2;4;3
-WireConnection;7;0;2;1
-WireConnection;7;1;2;2
-WireConnection;7;2;2;3
-WireConnection;5;0;6;0
-WireConnection;5;1;7;0
+WireConnection;15;0;2;0
+WireConnection;14;0;4;0
+WireConnection;23;0;17;0
+WireConnection;24;0;4;0
+WireConnection;5;0;14;0
+WireConnection;5;1;15;0
+WireConnection;26;0;23;0
+WireConnection;26;1;24;0
 WireConnection;8;0;5;0
 WireConnection;8;3;4;4
-WireConnection;1;0;8;0
+WireConnection;22;0;26;0
+WireConnection;22;3;4;4
+WireConnection;13;0;22;0
+WireConnection;13;1;8;0
+WireConnection;1;0;13;0
 ASEEND*/
-//CHKSM=9F0072BD68D2C0EA12A262A18515747AD29D40ED
+//CHKSM=488C63CC2754EC77C962F82BE16DA6ED9E48C4B8

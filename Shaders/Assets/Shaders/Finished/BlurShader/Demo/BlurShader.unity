@@ -411,8 +411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blurShader: {fileID: 4800000, guid: 63ccb20cb35d349fa8b4d48899a34273, type: 3}
-  blurTransitionShader: {fileID: 4800000, guid: 1ea669adb226e4ff0b64aabe53161cd9,
-    type: 3}
   exclusionCamera: {fileID: 507968534}
   downScaleCount: 4
   transitionDuration: 0.25
