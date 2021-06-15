@@ -138,6 +138,8 @@ namespace Shaders.Editor
                 default:
                     throw new ResetNotDefinedException(targetProperty.type);
             }
+            
+            EditorUtility.SetDirty(targetMaterial);
         }
     
         private static void DrawLine(Color color, int thickness = 2, int padding = 10)

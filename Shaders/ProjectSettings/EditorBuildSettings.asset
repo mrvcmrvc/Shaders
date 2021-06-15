@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Shaders/Finished/BlurShader/Demo/BlurShader.unity
-    guid: 91f4f531f4c804b5bb1cf0d0b09222f3
+    path: Assets/Shaders/Finished/ShineShader/Demo/ShineShader.unity
+    guid: 49c87d44ab6f7439eb6bb2c666c9b0da
   m_configObjects: {}
