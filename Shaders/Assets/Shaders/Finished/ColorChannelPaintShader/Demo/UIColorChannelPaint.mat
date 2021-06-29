@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UIColorChannelPaint
+  m_Shader: {fileID: 4800000, guid: 86e60618be60e4441be6eca4d140a086, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _ColorMask: 15
+    - _Glow: 1
+    - _HueChangeLit: 0
+    - _HueChangeUnlit: 0
+    - _OverlayGlow: 1
+    - _SaturationChangeLit: 0
+    - _SaturationChangeUnlit: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _BColor: {r: 0.25490198, g: 0.6313726, b: 1, a: 1}
+    - _BlueChannelColor: {r: 0, g: 0.9604411, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0, g: 0.0491538, b: 1, a: 1}
+    - _From: {r: 1, g: 0.7827778, b: 0.609, a: 1}
+    - _GBColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GColor: {r: 1, g: 0.18039216, b: 0.44705883, a: 1}
+    - _GreenChannelColor: {r: 1, g: 0, b: 0.76815224, a: 1}
+    - _Multiplier: {r: 1, g: 1, b: 1, a: 1}
+    - _RBColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RColor: {r: 1, g: 0.7529412, b: 0, a: 1}
+    - _RGChannelColor: {r: 0, g: 0.0491538, b: 1, a: 1}
+    - _RGColor: {r: 0.45490196, g: 0.41568628, b: 0.9529412, a: 1}
+    - _RedChannelColor: {r: 1, g: 0.98480505, b: 0, a: 1}
+    - _To: {r: 0.96470594, g: 0.70980394, b: 0.5058824, a: 1}
