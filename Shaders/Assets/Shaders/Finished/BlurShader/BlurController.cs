@@ -12,26 +12,30 @@ public class BlurController : MonoBehaviour
     private Camera exclusionCamera;
     public Camera ExclusionCamera => exclusionCamera;
         
-    [SerializeField, Range(1, 16)]
-    private int downScaleCount = 1;
+    [SerializeField, Range(0, 16)]
+    private int downScaleCount = 2;
 
+    [SerializeField, Range(0f, 1f)]
+    private float resolutionScaling = 0.5f;
+    
     [SerializeField]
-    private float transitionDuration;
+    private float transitionDuration = 0.1f;
 
     private CommandBuffer blurCommandBuffer;
     private Material blurMaterial;
     private Camera mainCamera;
     private Coroutine transitionCoroutine;
+    private Vector2Int startingResolution;
     
     private const int downScalePass = 0;
     private const int upScalePass = 1;
     
-    public const string EXCLUSION_LAYER_NAME = "BlurExclusion";
     private static readonly int ORIGINAL_TEXTURE_ID = Shader.PropertyToID("_OriginalTexture");
-    private static readonly int BLURRED_TEXTURE_ID = Shader.PropertyToID("_BlurredTexture");
     private static readonly int INTENSITY_ID = Shader.PropertyToID("_Intensity");
-    private const string BUFFER_NAME = "Blur Buffer";
-    private const CameraEvent CAMERA_EVENT = CameraEvent.AfterForwardAlpha;
+    
+    public const string ExclusionLayerName = "BlurExclusion";
+    private const string bufferName = "Blur Buffer";
+    private const CameraEvent cameraEvent = CameraEvent.AfterForwardAlpha;
     
     private void OnEnable()
     {
@@ -55,10 +59,7 @@ public class BlurController : MonoBehaviour
             enabled = true;
 
         if (transitionCoroutine != null)
-        {
             StopCoroutine(transitionCoroutine);
-            transitionCoroutine = null;
-        }
         
         transitionCoroutine = StartCoroutine(IntensityEnumerator(activate ? 1f : 0f, isInstant ? Mathf.Epsilon : transitionDuration));
     }
@@ -75,8 +76,10 @@ public class BlurController : MonoBehaviour
             
             yield return null;
         }
+        
+        blurMaterial.SetFloat(INTENSITY_ID, targetIntensity);
 
-        if (targetIntensity == 0f)
+        if (Mathf.Approximately(targetIntensity, 0f))
             enabled = false;
 
         transitionCoroutine = null;
@@ -95,13 +98,17 @@ public class BlurController : MonoBehaviour
         
         blurCommandBuffer = new CommandBuffer
         {
-            name = BUFFER_NAME
+            name = bufferName
         };
         
         blurMaterial = new Material(blurShader)
         {
             hideFlags = HideFlags.HideAndDontSave
         };
+        
+        startingResolution = new Vector2Int(
+            Mathf.RoundToInt(Screen.width * resolutionScaling), 
+            Mathf.RoundToInt(Screen.height * resolutionScaling));
     }
 
     private void RenderBlur()
@@ -113,12 +120,10 @@ public class BlurController : MonoBehaviour
         DownScale();
         UpScale();
         
-        SetBlurredTextureAsGlobal();
-
         BlitBlurredTextureToBuffer();
         BlitExcludedCameraToBuffer();
         
-        mainCamera.AddCommandBuffer(CAMERA_EVENT, blurCommandBuffer);
+        mainCamera.AddCommandBuffer(cameraEvent, blurCommandBuffer);
         
         blurMaterial.SetFloat(INTENSITY_ID, 1f);
     }
@@ -131,7 +136,7 @@ public class BlurController : MonoBehaviour
             return;
         
         if(mainCamera != null)
-            mainCamera.RemoveCommandBuffer(CAMERA_EVENT, blurCommandBuffer);
+            mainCamera.RemoveCommandBuffer(cameraEvent, blurCommandBuffer);
         
         blurCommandBuffer.Clear();
         blurCommandBuffer = null;
@@ -139,14 +144,13 @@ public class BlurController : MonoBehaviour
 
     private void DownScale()
     {
-        int width = Screen.width;
-        int height = Screen.height;
+        int width = startingResolution.x;
+        int height = startingResolution.y;
         
         int dest = Shader.PropertyToID($"currentDestination_{0}");
-        
-        int currentIterationIndex = 1;
         int src = dest;
-        for (; currentIterationIndex < downScaleCount; currentIterationIndex++)
+
+        for (int currentIterationIndex = 1; currentIterationIndex <= downScaleCount; currentIterationIndex++)
         {
             width >>= 1;
             height >>= 1;
@@ -156,7 +160,7 @@ public class BlurController : MonoBehaviour
         
             dest = Shader.PropertyToID($"currentDestination_{currentIterationIndex}");
             
-            blurCommandBuffer.GetTemporaryRT(dest, width, height, 0, FilterMode.Bilinear, RenderTextureFormat.BGRA32);
+            blurCommandBuffer.GetTemporaryRT(dest, width, height, 0, FilterMode.Bilinear, RenderTextureFormat.DefaultHDR);
             blurCommandBuffer.Blit(src, dest, blurMaterial, downScalePass);
 
             src = dest;
@@ -165,8 +169,8 @@ public class BlurController : MonoBehaviour
     
     private void UpScale()
     {
-        int currentIterationIndex = downScaleCount - 2;
-        int previousDestination = downScaleCount - 1;
+        int currentIterationIndex = downScaleCount - 1;
+        int previousDestination = downScaleCount;
 
         for (; currentIterationIndex >= 0; currentIterationIndex--)
         {
@@ -183,7 +187,7 @@ public class BlurController : MonoBehaviour
     private void BlitBlurredTextureToBuffer()
     {
         int src = Shader.PropertyToID($"currentDestination_{0}");
-        blurCommandBuffer.Blit(src, BuiltinRenderTextureType.CameraTarget, blurMaterial, downScalePass);
+        blurCommandBuffer.Blit(src, BuiltinRenderTextureType.CameraTarget);
     }
 
     private void BlitExcludedCameraToBuffer()
@@ -194,18 +198,12 @@ public class BlurController : MonoBehaviour
     private void AddCameraRenderTextureToBuffer()
     {
         int dest = Shader.PropertyToID($"currentDestination_{0}");
-        blurCommandBuffer.GetTemporaryRT(dest, -1, -1, 0, FilterMode.Bilinear, RenderTextureFormat.BGRA32);
+        blurCommandBuffer.GetTemporaryRT(dest, startingResolution.x, startingResolution.y, 0, FilterMode.Bilinear, RenderTextureFormat.DefaultHDR);
         blurCommandBuffer.Blit(BuiltinRenderTextureType.CameraTarget, dest, blurMaterial, downScalePass);
     }
     
     private void SetCameraRenderTextureAsGlobal()
     {
         blurCommandBuffer.SetGlobalTexture(ORIGINAL_TEXTURE_ID, BuiltinRenderTextureType.CameraTarget);
-    }
-    
-    private void SetBlurredTextureAsGlobal()
-    {
-        int src = Shader.PropertyToID($"currentDestination_{0}");
-        blurCommandBuffer.SetGlobalTexture(BLURRED_TEXTURE_ID, src);
     }
 }

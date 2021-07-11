@@ -36,8 +36,7 @@ Shader "mrvc/Overlay"
 			PassFront [_StencilOp]
 			FailFront Keep
 			ZFailFront Keep
-			CompBack Always
-			PassBack Keep
+			CompBack LEqual
 			FailBack Keep
 			ZFailBack Keep
 		}
@@ -160,7 +159,7 @@ Shader "mrvc/Overlay"
 }
 /*ASEBEGIN
 Version=18800
-305;-1276;1792;1000;1788.085;-892.342;1.242172;True;True
+103;-1305;1789;1124;2145.21;-843.8972;1.242172;True;False
 Node;AmplifyShaderEditor.TemplateShaderPropertyNode;120;-1571.011,1717.274;Inherit;False;0;0;_MainTex;Shader;False;0;5;SAMPLER2D;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SamplerNode;121;-1387.011,1712.274;Inherit;True;Property;_TextureSample0;Texture Sample 0;1;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;white;Auto;False;Instance;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.RGBToHSVNode;122;-1182.358,1435.563;Inherit;False;1;0;FLOAT3;0,0,0;False;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
@@ -172,7 +171,7 @@ Node;AmplifyShaderEditor.SimpleMultiplyOpNode;127;-764.3575,1514.563;Inherit;Fal
 Node;AmplifyShaderEditor.SimpleAddOpNode;128;-473.3575,1296.563;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.BlendOpsNode;129;-484.2755,1711.712;Inherit;True;Overlay;False;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;130;-198.0128,1604.117;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;FLOAT;0;False;1;COLOR;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;72;131.0545,1518.549;Float;False;True;-1;2;OverlayShaderEditor;0;6;mrvc/Overlay;5056123faa0c79b47ab6ad7e8bf059a4;True;Default;0;0;Default;2;True;2;5;False;-1;10;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;True;2;False;-1;True;True;True;True;True;0;True;-9;False;False;False;True;True;0;True;-5;255;True;-8;255;True;-7;0;True;-4;0;True;-6;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;True;2;False;-1;True;0;True;-11;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;0;;0;0;Standard;0;0;1;True;False;;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;72;131.0545,1518.549;Float;False;True;-1;2;OverlayShaderEditor;0;6;mrvc/Overlay;5056123faa0c79b47ab6ad7e8bf059a4;True;Default;0;0;Default;2;True;2;5;False;-1;10;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;True;2;False;-1;True;True;True;True;True;0;True;-9;False;False;False;True;True;0;True;-5;255;True;-8;255;True;-7;0;True;-4;0;True;-6;1;False;-1;1;False;-1;4;False;-1;0;False;-1;1;False;-1;1;False;-1;True;2;False;-1;True;0;True;-11;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;0;;0;0;Standard;0;0;1;True;False;;False;0
 WireConnection;121;0;120;0
 WireConnection;122;0;121;0
 WireConnection;124;0;122;3
@@ -191,4 +190,4 @@ WireConnection;130;0;129;0
 WireConnection;130;1;123;4
 WireConnection;72;0;130;0
 ASEEND*/
-//CHKSM=A81EB0CA20AAABEE78310EE01D89E47BBD5CC96C
+//CHKSM=97C5DCC7955A235ADA149E083D58612E41B2ACB5

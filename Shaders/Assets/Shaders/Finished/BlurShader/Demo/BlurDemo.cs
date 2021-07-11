@@ -20,7 +20,7 @@ public class BlurDemo : MonoBehaviour
     {
         #region Activate / Deactivate Blur
 
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetMouseButtonDown(0))
             blurController.SetActive(!blurController.enabled);
 
         #endregion
@@ -28,7 +28,7 @@ public class BlurDemo : MonoBehaviour
         #region World Object Blur Inclusion / Exclusion
 
         if (Input.GetKeyUp(KeyCode.Alpha1))
-            targetObject.layer = LayerMask.NameToLayer(BlurController.EXCLUSION_LAYER_NAME);
+            targetObject.layer = LayerMask.NameToLayer(BlurController.ExclusionLayerName);
         
         if (Input.GetKeyUp(KeyCode.Alpha2))
             targetObject.layer = LayerMask.NameToLayer("Default");
