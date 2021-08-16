@@ -71,13 +71,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
-  spriteMeshType: 1
+  spriteExtrude: 0
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -144,10 +144,10 @@ TextureImporter:
       name: Ball_FrameAnimated_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 791
-        width: 212
-        height: 212
+        x: 0
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,10 +165,10 @@ TextureImporter:
       name: Ball_FrameAnimated_1
       rect:
         serializedVersion: 2
-        x: 271
-        y: 792
-        width: 214
-        height: 214
+        x: 256
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,10 +186,10 @@ TextureImporter:
       name: Ball_FrameAnimated_2
       rect:
         serializedVersion: 2
-        x: 524
-        y: 792
-        width: 214
-        height: 214
+        x: 512
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,10 +207,10 @@ TextureImporter:
       name: Ball_FrameAnimated_3
       rect:
         serializedVersion: 2
-        x: 777
-        y: 792
-        width: 214
-        height: 214
+        x: 768
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: Ball_FrameAnimated_4
       rect:
         serializedVersion: 2
-        x: 5
-        y: 539
-        width: 227
-        height: 214
+        x: 0
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +249,10 @@ TextureImporter:
       name: Ball_FrameAnimated_5
       rect:
         serializedVersion: 2
-        x: 258
-        y: 539
-        width: 227
-        height: 214
+        x: 256
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,10 +270,10 @@ TextureImporter:
       name: Ball_FrameAnimated_6
       rect:
         serializedVersion: 2
-        x: 524
-        y: 539
-        width: 214
-        height: 214
+        x: 512
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +291,10 @@ TextureImporter:
       name: Ball_FrameAnimated_7
       rect:
         serializedVersion: 2
-        x: 777
-        y: 539
-        width: 228
-        height: 214
+        x: 768
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,10 +312,10 @@ TextureImporter:
       name: Ball_FrameAnimated_8
       rect:
         serializedVersion: 2
-        x: 18
-        y: 286
-        width: 228
-        height: 214
+        x: 0
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,10 +333,10 @@ TextureImporter:
       name: Ball_FrameAnimated_9
       rect:
         serializedVersion: 2
-        x: 271
-        y: 286
-        width: 214
-        height: 214
+        x: 256
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

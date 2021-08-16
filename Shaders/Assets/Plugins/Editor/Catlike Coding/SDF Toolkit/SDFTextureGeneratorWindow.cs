@@ -157,34 +157,42 @@ namespace CatlikeCoding.SDFToolkit.Editor {
 				destination = new Texture2D(source.width, source.height, TextureFormat.ARGB32, false);
 				destination.hideFlags = HideFlags.HideAndDontSave;
 			}
-			string path = AssetDatabase.GetAssetPath(source);
-			TextureImporter importer = TextureImporter.GetAtPath(path) as TextureImporter;
-			if (importer == null) {
-				Debug.LogError("Cannot work with built-in textures.");
-				return;
-			}
-			if (importer.crunchedCompression) {
-				Debug.LogError("You have to disable crunch compression while generating the SDF texture.");
-				return;
+			
+			bool isReadble = source.isReadable;
+			if (!isReadble) {
+				Debug.LogError("You have to make the texture readable by ticking Read/Write Enabled.");
 			}
 
-			bool isReadble = importer.isReadable;
-			TextureImporterCompression compression = importer.textureCompression;
+			//string path = AssetDatabase.GetAssetPath(source);
 
-			bool uncompressed = compression == TextureImporterCompression.Uncompressed;
+			// TextureImporter importer = TextureImporter.GetAtPath(path) as TextureImporter;
+			// if (importer == null) {
+			// 	Debug.LogError("Cannot work with built-in textures.");
+			// 	return;
+			// }
+			
+			// if (importer.crunchedCompression) {
+			// 	Debug.LogError("You have to disable crunch compression while generating the SDF texture.");
+			// 	return;
+			// }
 
-			if (!isReadble || !uncompressed) {
-				importer.isReadable = true;
-				importer.textureCompression = TextureImporterCompression.Uncompressed;
-				AssetDatabase.ImportAsset(path);
-			}
+			//bool isReadble = importer.isReadable;
+			//TextureImporterCompression compression = importer.textureCompression;
+
+			//bool uncompressed = compression == TextureImporterCompression.Uncompressed;
+
+			// if (!isReadble || !uncompressed) {
+			// 	importer.isReadable = true;
+			// 	importer.textureCompression = TextureImporterCompression.Uncompressed;
+			// 	AssetDatabase.ImportAsset(path);
+			// }
 			SDFTextureGenerator.Generate(
 				source, destination, insideDistance, outsideDistance, postProcessDistance, rgbFillMode);
-			if (!isReadble || !uncompressed) {
-				importer.isReadable = isReadble;
-				importer.textureCompression = compression;
-				AssetDatabase.ImportAsset(path);
-			}
+			// if (!isReadble || !uncompressed) {
+			// 	importer.isReadable = isReadble;
+			// 	importer.textureCompression = compression;
+			// 	AssetDatabase.ImportAsset(path);
+			// }
 			destination.Apply();
 			allowSave = true;
 		}

@@ -107,8 +107,8 @@ namespace CatlikeCoding.SDFToolkit {
 			float maxInside,
 			float maxOutside,
 			float postProcessDistance,
-			RGBFillMode rgbMode) {
-
+			RGBFillMode rgbMode)
+		{			
 			if(source.height != destination.height || source.width != destination.width){
 				Debug.LogError("Source and destination textures must be the same size.");
 				return;

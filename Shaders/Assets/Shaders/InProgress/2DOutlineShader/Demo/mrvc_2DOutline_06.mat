@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: mrvc_2DOutline_06
+  m_Shader: {fileID: 4800000, guid: 24089306f8f2140dcb1961b8c032889b, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OutlineTexture:
+        m_Texture: {fileID: 2800000, guid: d223e0f3196b34ebdaee944d1a52e395, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 8bb388bfb1eff4c4da58a13a6ced8d44, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _Blend: 0
+    - _BlendOutwards: 1
+    - _BlendSmoothness: 0
+    - _BlendWidth: 0
+    - _Float0: 0.5
+    - _InnerEdgeAlpha: 0.269
+    - _InnerFalloff: 0
+    - _InnerMax: 1
+    - _InnerMin: 0
+    - _InnerSmoothness: 1
+    - _InnerSmoothness1: 0.001
+    - _InnerWidth: 0
+    - _InnerWidth1: 0.5
+    - _Max: 1
+    - _Min: 0
+    - _OuterEdgeAlpha: 0.309
+    - _OuterFalloff: 0
+    - _OuterMax: 1
+    - _OuterMin: 0
+    - _OuterSmoothness: 1
+    - _OuterWidth: 0.236
+    - _SpriteEdgeAlpha: 0.525
+    - _SpriteGradientMixValue: 1
+    - _Stregth: 1
+    - _Thickness: 1
+    - _blendWidth: 1
+    m_Colors:
+    - _BlendGlowColor: {r: 1, g: 1, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _GlowColor: {r: 1, g: 0.460733, b: 0, a: 1}
+    - _InnerGlowColor: {r: 2, g: 2, b: 2, a: 1}
+    - _InnerGlowColor1: {r: 1, g: 1, b: 0, a: 1}
+    - _OuterGlowColor: {r: 2, g: 2, b: 2, a: 1}

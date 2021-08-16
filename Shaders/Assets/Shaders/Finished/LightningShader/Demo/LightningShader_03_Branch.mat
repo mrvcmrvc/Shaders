@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LightningShader_03_Branch
+  m_Shader: {fileID: 4800000, guid: 7c666cc45cb4d4364af1e3558587ea05, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: b54dbeca5d71d4b06b7cab2f01de88b3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture0:
+        m_Texture: {fileID: 2800000, guid: 767b7dc9d93ed4e6d812eb87098d61e1, type: 3}
+        m_Scale: {x: 10, y: 10}
+        m_Offset: {x: -4, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: ef56511d8e45a4255b6c8304e899659e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _Booster: 1
+    - _EdgeConstraintScale: 1
+    - _EdgeInnerOffset: 0
+    - _EdgeOuterOffset: 1.5
+    - _Float0: 0
+    - _Height: 0.01
+    - _NoiseOffset: 0
+    - _NoiseScale: 20
+    - _NoiseStrength: 0.3
+    - _PolarMaskScale: 1
+    - _Speed: 0.1
+    - _Width: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0.6179246, g: 0.9148064, b: 1, a: 1}
+    - _LightningColor: {r: 0.22064607, g: 0.67201394, b: 1.8541684, a: 1}
+    - _MoveDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _PanningSpeed: {r: 0, g: 1, b: 0, a: 0}
+    - _Speed: {r: 0.6, g: 0.6, b: 0, a: 0}
+    - _Vector0: {r: 0, g: 0.1, b: 0, a: 0}
