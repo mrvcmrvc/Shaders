@@ -21,7 +21,12 @@ public class BlurDemo : MonoBehaviour
         #region Activate / Deactivate Blur
 
         if (Input.GetKeyUp(KeyCode.A) || Input.GetMouseButtonDown(0))
-            blurController.SetActive(!blurController.enabled);
+        {
+            if (blurController.IsActive)
+                blurController.Deactivate();
+            else
+                blurController.Activate();
+        }
 
         #endregion
 

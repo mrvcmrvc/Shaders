@@ -13,6 +13,9 @@ public class BloomDemo : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.A))
-            bloomController.SetActive(!bloomController.enabled);
+            bloomController.SetActive(true);
+        
+        if (Input.GetKeyUp(KeyCode.D))
+            bloomController.SetActive(false);
     }
 }

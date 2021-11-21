@@ -45,6 +45,7 @@ Material:
     - _BlendOutwards: 1
     - _BlendSmoothness: 0
     - _BlendWidth: 0.104
+    - _ColorMask: 15
     - _Float0: 0.5
     - _InnerEdgeAlpha: 0.269
     - _InnerFalloff: 0
@@ -64,8 +65,14 @@ Material:
     - _OuterWidth: 1
     - _SpriteEdgeAlpha: 0.525
     - _SpriteGradientMixValue: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _Stregth: 1
     - _Thickness: 1
+    - _UseUIAlphaClip: 0
     - _blendWidth: 1
     m_Colors:
     - _BlendGlowColor: {r: 1, g: 1, b: 0, a: 1}

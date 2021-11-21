@@ -1,29 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-[ExecuteInEditMode]
 public class BlurController : MonoBehaviour
 {    
     [SerializeField]
     private Shader blurShader;
-    
+    [SerializeField]
+    private Camera renderCamera;
     [SerializeField]
     private Camera exclusionCamera;
     public Camera ExclusionCamera => exclusionCamera;
-        
-    [SerializeField, Range(0, 16)]
+    [SerializeField, Range(1, 16)]
     private int downScaleCount = 2;
-
     [SerializeField, Range(0f, 1f)]
     private float resolutionScaling = 0.5f;
-    
     [SerializeField]
     private float transitionDuration = 0.1f;
+    
+    public event Action OnBlurStackUpdatedEvent;
 
+    public bool ShouldBlurEverything
+    {
+        get
+        {
+            if (blurCallStack.Count > 0)
+                return blurCallStack.Peek();
+            
+            return false;
+        }
+    }
+
+    public bool IsActive => enabled && blurCallStack.Count > 0;
+
+    private Stack<bool> blurCallStack;
     private CommandBuffer blurCommandBuffer;
     private Material blurMaterial;
-    private Camera mainCamera;
     private Coroutine transitionCoroutine;
     private Vector2Int startingResolution;
     
@@ -37,9 +51,14 @@ public class BlurController : MonoBehaviour
     private const string bufferName = "Blur Buffer";
     private const CameraEvent cameraEvent = CameraEvent.AfterForwardAlpha;
     
+    private void Awake()
+    {
+        blurCallStack = new Stack<bool>();
+    }
+
     private void OnEnable()
     {
-        if(blurCommandBuffer != null)
+        if (blurCommandBuffer != null)
             return;
 
         Startup();
@@ -50,14 +69,30 @@ public class BlurController : MonoBehaviour
         Cleanup();
     }
 
-    public void SetActive(bool activate, bool isInstant = false)
+    public void Activate(bool blurAll = false, bool isInstant = false)
     {
-        if(enabled == activate)
-            return;
+        blurCallStack.Push(blurAll);
 
+        SetActive(true, isInstant);
+    }
+
+    public void Deactivate(bool isInstant = false)
+    {
+        blurCallStack.Pop();
+
+        SetActive(false, isInstant);
+    }
+
+    private void SetActive(bool activate, bool isInstant = false)
+    {
         if (activate)
             enabled = true;
 
+        OnBlurStackUpdatedEvent?.Invoke();
+        
+        if ((activate && blurCallStack.Count > 1) || (!activate && blurCallStack.Count > 0))
+            return;
+        
         if (transitionCoroutine != null)
             StopCoroutine(transitionCoroutine);
         
@@ -94,8 +129,6 @@ public class BlurController : MonoBehaviour
 
     private void Initialize()
     {
-        mainCamera = Camera.main;
-        
         blurCommandBuffer = new CommandBuffer
         {
             name = bufferName
@@ -123,7 +156,7 @@ public class BlurController : MonoBehaviour
         BlitBlurredTextureToBuffer();
         BlitExcludedCameraToBuffer();
         
-        mainCamera.AddCommandBuffer(cameraEvent, blurCommandBuffer);
+        renderCamera.AddCommandBuffer(cameraEvent, blurCommandBuffer);
         
         blurMaterial.SetFloat(INTENSITY_ID, 1f);
     }
@@ -132,11 +165,11 @@ public class BlurController : MonoBehaviour
     {
         DestroyImmediate(blurMaterial);
 
-        if(blurCommandBuffer == null)
+        if (blurCommandBuffer == null)
             return;
         
-        if(mainCamera != null)
-            mainCamera.RemoveCommandBuffer(cameraEvent, blurCommandBuffer);
+        if (renderCamera != null)
+            renderCamera.RemoveCommandBuffer(cameraEvent, blurCommandBuffer);
         
         blurCommandBuffer.Clear();
         blurCommandBuffer = null;
@@ -155,7 +188,7 @@ public class BlurController : MonoBehaviour
             width >>= 1;
             height >>= 1;
             
-            if(width < 2 || height < 2)
+            if (width < 2 || height < 2)
                 break;
         
             dest = Shader.PropertyToID($"currentDestination_{currentIterationIndex}");

@@ -97,6 +97,7 @@ namespace Shaders.Editor
 
             materialEditor.ShaderProperty(targetProperty, propertyLabel);
 
+            DrawPropertyCopyButton(targetProperty);
             DrawResetButton(targetProperty);
         
             EditorGUI.indentLevel--;
@@ -105,14 +106,26 @@ namespace Shaders.Editor
 
         private void DrawResetButton(MaterialProperty targetProperty)
         {
-            GUIContent resetButtonLabel = new GUIContent
+            GUIContent buttonLabel = new GUIContent
             {
                 text = "R",
                 tooltip = "Resets to default value"
             };
             
-            if (GUILayout.Button(resetButtonLabel, GUILayout.Width(20)))
+            if (GUILayout.Button(buttonLabel, GUILayout.Width(20)))
                 ResetProperty(targetProperty);
+        }
+        
+        private void DrawPropertyCopyButton(MaterialProperty targetProperty)
+        {
+            GUIContent buttonLabel = new GUIContent
+            {
+                text = "C",
+                tooltip = "Copies property name to clipboard"
+            };
+            
+            if (GUILayout.Button(buttonLabel, GUILayout.Width(20)))
+                CopyPropertyNameToClipboard(targetProperty);
         }
     
         private void ResetProperty(MaterialProperty targetProperty)
@@ -140,6 +153,17 @@ namespace Shaders.Editor
             }
             
             EditorUtility.SetDirty(targetMaterial);
+        }
+        
+        private void CopyPropertyNameToClipboard(MaterialProperty targetProperty)
+        {
+            TextEditor textEditor = new TextEditor
+            {
+                text = targetProperty.name
+            };
+            
+            textEditor.SelectAll();
+            textEditor.Copy();
         }
     
         private static void DrawLine(Color color, int thickness = 2, int padding = 10)

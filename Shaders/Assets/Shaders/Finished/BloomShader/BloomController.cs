@@ -2,31 +2,35 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-[ExecuteInEditMode]
 public class BloomController : MonoBehaviour
 {
     [SerializeField]
+    private bool startOnAwake;
+    [SerializeField]
+    private bool useMainCamera;
+    [SerializeField]
+    private Camera renderCamera;
+    [SerializeField]
     private Shader bloomShader;
-    
     [SerializeField, Range(1, 16)]
     private int downScaleCount = 1;
-
+    [SerializeField, Range(0f, 1f)]
+    private float resolutionScaling = 0.5f;
     [SerializeField]
     private float transitionDuration;
-    
     [Header("Threshold Settings"), SerializeField, Range(1f, 10f)]
     private float threshold = 1;
-
     [SerializeField, Range(0f, 1f)]
     private float softThreshold = 0.5f;
-    
     [SerializeField, Range(0, 10)]
     private float intensity = 1;
     
+    public bool IsEnabled { get; private set; }
+    
     private CommandBuffer bloomCommandBuffer;
     private Material bloomMaterial;
-    private Camera mainCamera;
     private Coroutine transitionCoroutine;
+    private Vector2Int startingResolution;
 
     private const int preFilterPass = 1;
     private const int downScalePass = 2;
@@ -39,37 +43,58 @@ public class BloomController : MonoBehaviour
     private const string BUFFER_NAME = "Bloom Buffer";
     private const CameraEvent CAMERA_EVENT = CameraEvent.AfterForwardAlpha;
 
+    private void Awake()
+    {
+        if (useMainCamera)
+            renderCamera = Camera.main;
+        
+        if (startOnAwake)
+            SetActive(true);
+    }
+
     private void OnEnable()
     {
-        if(bloomCommandBuffer != null)
-            return;
-
-        Startup();
+        SetActive(true);
     }
 
     private void OnDisable()
     {
-        Cleanup();
+        SetActive(false, true);
     }
 
     public void SetActive(bool activate, bool isInstant = false)
     {
-        if(enabled == activate)
+        if (IsEnabled == activate)
             return;
         
-        if(activate)
-            enabled = true;
+        IsEnabled = activate;
+        
+        if (activate)
+            Startup();
 
         if (transitionCoroutine != null)
         {
             StopCoroutine(transitionCoroutine);
             transitionCoroutine = null;
         }
-        
-        StartCoroutine(IntensityEnumerator(activate ? intensity : 0f, isInstant ? Mathf.Epsilon : transitionDuration));
+
+        float targetIntensity = activate ? intensity : 0f;
+        if (isInstant)
+        {
+            bloomMaterial.SetFloat(INTENSITY_ID, targetIntensity);
+
+            if (activate)
+                return;
+            
+            Cleanup();
+        }
+        else
+        {
+            StartCoroutine(IntensityEnumerator(targetIntensity));
+        }
     }
     
-    private IEnumerator IntensityEnumerator(float targetIntensity, float transitionDuration)
+    private IEnumerator IntensityEnumerator(float targetIntensity)
     {
         float passedDuration = 0f;
         while (passedDuration <= transitionDuration)
@@ -83,7 +108,9 @@ public class BloomController : MonoBehaviour
         }
 
         if (targetIntensity == 0f)
-            enabled = false;
+            Cleanup();
+
+        transitionCoroutine = null;
     }
     
     private void Startup()
@@ -91,6 +118,26 @@ public class BloomController : MonoBehaviour
         Initialize();
         
         RenderBloom();
+    }
+    
+    private void Cleanup()
+    {
+        if (transitionCoroutine != null)
+        {
+            StopCoroutine(transitionCoroutine);
+            transitionCoroutine = null;
+        }
+        
+        if(bloomCommandBuffer == null)
+            return;
+        
+        if(renderCamera != null)            
+            renderCamera.RemoveCommandBuffer(CAMERA_EVENT, bloomCommandBuffer);
+         
+        DestroyImmediate(bloomMaterial);
+
+        bloomCommandBuffer.Clear();
+        bloomCommandBuffer = null;
     }
 
     private void Update()
@@ -108,9 +155,7 @@ public class BloomController : MonoBehaviour
     }
 
     private void Initialize()
-    {
-        mainCamera = Camera.main;
-        
+    {        
         bloomCommandBuffer = new CommandBuffer
         {
             name = BUFFER_NAME
@@ -120,18 +165,23 @@ public class BloomController : MonoBehaviour
         {
             hideFlags = HideFlags.HideAndDontSave
         };
+        
+        startingResolution = new Vector2Int(
+            Mathf.RoundToInt(Screen.width * resolutionScaling), 
+            Mathf.RoundToInt(Screen.height * resolutionScaling));
     }
 
     private void RenderBloom()
     {
         SetCameraRenderTextureAsGlobal();
-        
+
+        AddCameraRenderTextureToBuffer();
         DownScale();
         UpScale();
         
         BlitBlurredTextureToBuffer();
         
-        mainCamera.AddCommandBuffer(CAMERA_EVENT, bloomCommandBuffer);
+        renderCamera.AddCommandBuffer(CAMERA_EVENT, bloomCommandBuffer);
     }
 
     private Vector4 GetFilter()
@@ -146,42 +196,25 @@ public class BloomController : MonoBehaviour
         return filter;
     }
 
-    private void Cleanup()
-    {
-        DestroyImmediate(bloomMaterial);
-
-        if(bloomCommandBuffer == null)
-            return;
-        
-        if(mainCamera != null)            
-            mainCamera.RemoveCommandBuffer(CAMERA_EVENT, bloomCommandBuffer);
- 
-        bloomCommandBuffer.Clear();
-        bloomCommandBuffer = null;
-    }
-
     private void DownScale()
     {
-        int width = Screen.width;
-        int height = Screen.height;
+        int width = startingResolution.x;
+        int height = startingResolution.y;
         
         int dest = Shader.PropertyToID($"currentDestination_{0}");
-        bloomCommandBuffer.GetTemporaryRT(dest, width, height, 0, FilterMode.Bilinear, RenderTextureFormat.BGRA32);
-        bloomCommandBuffer.Blit(BuiltinRenderTextureType.CameraTarget, dest, bloomMaterial, preFilterPass);
-        
-        int currentIterationIndex = 1;
         int src = dest;
-        for (; currentIterationIndex < downScaleCount; currentIterationIndex++)
+
+        for (int currentIterationIndex = 1; currentIterationIndex <= downScaleCount; currentIterationIndex++)
         {
             width >>= 1;
             height >>= 1;
             
-            if(width < 2 || height < 2)
+            if (width < 2 || height < 2)
                 break;
         
             dest = Shader.PropertyToID($"currentDestination_{currentIterationIndex}");
             
-            bloomCommandBuffer.GetTemporaryRT(dest, width, height, 0, FilterMode.Bilinear, RenderTextureFormat.BGRA32);
+            bloomCommandBuffer.GetTemporaryRT(dest, width, height, 0, FilterMode.Bilinear, RenderTextureFormat.DefaultHDR);
             bloomCommandBuffer.Blit(src, dest, bloomMaterial, downScalePass);
 
             src = dest;
@@ -190,8 +223,8 @@ public class BloomController : MonoBehaviour
     
     private void UpScale()
     {
-        int currentIterationIndex = downScaleCount - 2;
-        int previousDestination = downScaleCount - 1;
+        int currentIterationIndex = downScaleCount - 1;
+        int previousDestination = downScaleCount;
 
         for (; currentIterationIndex >= 0; currentIterationIndex--)
         {
@@ -199,20 +232,27 @@ public class BloomController : MonoBehaviour
             int dest = Shader.PropertyToID($"currentDestination_{currentIterationIndex}");
 
             bloomCommandBuffer.Blit(src, dest, bloomMaterial, upScalePass);
+            bloomCommandBuffer.ReleaseTemporaryRT(src);
             
-            bloomCommandBuffer.ReleaseTemporaryRT(previousDestination);
             previousDestination = currentIterationIndex;
-        }
-    }
-    
-    private void SetCameraRenderTextureAsGlobal()
-    {
-        bloomCommandBuffer.SetGlobalTexture(ORIGINAL_TEXTURE_ID, BuiltinRenderTextureType.CameraTarget);
+        } 
     }
 
     private void BlitBlurredTextureToBuffer()
     {
         int src = Shader.PropertyToID($"currentDestination_{0}");
         bloomCommandBuffer.Blit(src, BuiltinRenderTextureType.CameraTarget, bloomMaterial, bloomPass);
+    }
+    
+    private void AddCameraRenderTextureToBuffer()
+    {
+        int dest = Shader.PropertyToID($"currentDestination_{0}");
+        bloomCommandBuffer.GetTemporaryRT(dest, startingResolution.x, startingResolution.y, 0, FilterMode.Bilinear, RenderTextureFormat.DefaultHDR);
+        bloomCommandBuffer.Blit(BuiltinRenderTextureType.CameraTarget, dest, bloomMaterial, preFilterPass);
+    }
+    
+    private void SetCameraRenderTextureAsGlobal()
+    {
+        bloomCommandBuffer.SetGlobalTexture(ORIGINAL_TEXTURE_ID, BuiltinRenderTextureType.CameraTarget);
     }
 }

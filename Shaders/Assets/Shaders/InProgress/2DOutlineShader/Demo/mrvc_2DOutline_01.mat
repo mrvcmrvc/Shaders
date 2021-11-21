@@ -41,10 +41,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
-    - _Blend: 0
+    - _Blend: 1
     - _BlendOutwards: 1
     - _BlendSmoothness: 0
     - _BlendWidth: 0
+    - _ColorMask: 15
     - _Float0: 0.5
     - _InnerEdgeAlpha: 0.269
     - _InnerFalloff: 0
@@ -61,11 +62,17 @@ Material:
     - _OuterMax: 1
     - _OuterMin: 0
     - _OuterSmoothness: 1
-    - _OuterWidth: 1
+    - _OuterWidth: 0.117
     - _SpriteEdgeAlpha: 0.525
     - _SpriteGradientMixValue: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _Stregth: 1
     - _Thickness: 1
+    - _UseUIAlphaClip: 0
     - _blendWidth: 1
     m_Colors:
     - _BlendGlowColor: {r: 1, g: 1, b: 0, a: 1}

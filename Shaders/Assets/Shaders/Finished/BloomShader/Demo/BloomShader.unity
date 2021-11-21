@@ -422,13 +422,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751868217}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4f0eae5404d04cca8cbca5cfabb63e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderCamera: {fileID: 59806330}
   bloomShader: {fileID: 4800000, guid: c122d577c06fd48838fa0808501ea320, type: 3}
-  downScaleCount: 8
+  downScaleCount: 4
+  resolutionScaling: 1
   transitionDuration: 0.25
   threshold: 2
   softThreshold: 0.5

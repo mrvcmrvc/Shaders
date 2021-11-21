@@ -493,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blurShader: {fileID: 4800000, guid: 63ccb20cb35d349fa8b4d48899a34273, type: 3}
+  renderCamera: {fileID: 59806330}
   exclusionCamera: {fileID: 507968534}
   downScaleCount: 2
   resolutionScaling: 0.5
