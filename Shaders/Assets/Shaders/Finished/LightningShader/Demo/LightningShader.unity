@@ -204,6 +204,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &210203771
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TexturedLightningShaderMaterial(Clone)
+  m_Shader: {fileID: 4800000, guid: 650c0fb17d13f4a2c899cf4c252d832f, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightningTexture:
+        m_Texture: {fileID: 2800000, guid: 4401c1f5730f947b383310a8afffdfea, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: b54dbeca5d71d4b06b7cab2f01de88b3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 1}
+    - _Texture0:
+        m_Texture: {fileID: 2800000, guid: 767b7dc9d93ed4e6d812eb87098d61e1, type: 3}
+        m_Scale: {x: 10, y: 10}
+        m_Offset: {x: -4, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 6085789c4748e441f8e56b9c1509f38e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _Booster: 1
+    - _CurTime: 33.189007
+    - _EdgeConstraintScale: 0
+    - _EdgeInnerOffset: 0
+    - _EdgeOuterOffset: 1
+    - _Float0: 1.64
+    - _Height: 1
+    - _NoiseOffset: 0
+    - _NoiseScale: 25
+    - _NoiseStrength: 0.15
+    - _PolarMaskScale: 1
+    - _RadialOffsetStrength: 0
+    - _RadialScale: 1
+    - _Speed: 0.1
+    - _Width: 0.02
+    - _counter: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0.6179246, g: 0.9148064, b: 1, a: 1}
+    - _LightningColor: {r: 0.32111177, g: 0.6759315, b: 1.6055588, a: 1}
+    - _MoveDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _PanningSpeed: {r: 0, g: 1, b: 0, a: 0}
+    - _RadialScaleCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _Speed: {r: 10, g: 10, b: 0, a: 0}
+    - _Tiling: {r: 3, g: 1, b: 0, a: 0}
+    - _Vector0: {r: 0, g: 0.1, b: 0, a: 0}
 --- !u!1 &420174291
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 653819618}
+  m_Material: {fileID: 210203771}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -325,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetGraphic: {fileID: 420174294}
   originalMaterial: {fileID: 2100000, guid: 8d758628ae9644080ad1cba98f87a82b, type: 2}
-  instancedMaterial: {fileID: 653819618}
+  instancedMaterial: {fileID: 210203771}
   exposes:
   - {fileID: 420174296}
 --- !u!95 &420174298
@@ -404,81 +479,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95354847711d363408aebd57a0dc92ae, type: 3}
---- !u!21 &653819618
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LightningShader_01_v2(Clone)
-  m_Shader: {fileID: 4800000, guid: 650c0fb17d13f4a2c899cf4c252d832f, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _LightningTexture:
-        m_Texture: {fileID: 2800000, guid: 4401c1f5730f947b383310a8afffdfea, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise:
-        m_Texture: {fileID: 2800000, guid: b54dbeca5d71d4b06b7cab2f01de88b3, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 1}
-    - _Texture0:
-        m_Texture: {fileID: 2800000, guid: 767b7dc9d93ed4e6d812eb87098d61e1, type: 3}
-        m_Scale: {x: 10, y: 10}
-        m_Offset: {x: -4, y: 0}
-    - _TextureSample0:
-        m_Texture: {fileID: 2800000, guid: 6085789c4748e441f8e56b9c1509f38e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _texcoord:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _Booster: 1
-    - _CurTime: 33.189007
-    - _EdgeConstraintScale: 0
-    - _EdgeInnerOffset: 0
-    - _EdgeOuterOffset: 1
-    - _Float0: 1.64
-    - _Height: 1
-    - _NoiseOffset: 0
-    - _NoiseScale: 25
-    - _NoiseStrength: 0.15
-    - _PolarMaskScale: 1
-    - _RadialOffsetStrength: 0
-    - _RadialScale: 1
-    - _Speed: 0.1
-    - _Width: 0.02
-    - _counter: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color0: {r: 0.6179246, g: 0.9148064, b: 1, a: 1}
-    - _LightningColor: {r: 0.32111177, g: 0.6759315, b: 1.6055588, a: 1}
-    - _MoveDirection: {r: 0, g: 1, b: 0, a: 0}
-    - _PanningSpeed: {r: 0, g: 1, b: 0, a: 0}
-    - _RadialScaleCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _Speed: {r: 10, g: 10, b: 0, a: 0}
-    - _Tiling: {r: 3, g: 1, b: 0, a: 0}
-    - _Vector0: {r: 0, g: 0.1, b: 0, a: 0}
 --- !u!1 &696491767
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,7 +792,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 857b0478c6d234fb288b8b6cc8c1ec4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 611ce04f46b8548fbb414c219127f92d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
