@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GenericShineShaderMaterial
+  m_Name: GenericShineShaderMaterial_Simple
   m_Shader: {fileID: 4800000, guid: 52c130ea3e6784a308e712d9509591b6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -147,6 +147,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _ImageType: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -156,7 +157,7 @@ Material:
     - _RotateAngle: -45
     - _ShineAlpha: 1
     - _ShineGlow: 1
-    - _ShineLocation: 0
+    - _ShineLocation: 0.5
     - _ShinePlacement: 0
     - _ShineWidth: 0.05
     - _Smoothness: 0.5
