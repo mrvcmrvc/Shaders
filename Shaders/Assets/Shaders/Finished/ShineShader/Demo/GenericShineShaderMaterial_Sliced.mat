@@ -157,7 +157,7 @@ Material:
     - _RotateAngle: 0
     - _ShineAlpha: 1
     - _ShineGlow: 1
-    - _ShineLocation: 0.5
+    - _ShineLocation: 0.48
     - _ShinePlacement: 0
     - _ShineWidth: 0.05
     - _Smoothness: 0.5

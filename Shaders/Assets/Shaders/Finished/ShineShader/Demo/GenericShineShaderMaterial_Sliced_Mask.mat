@@ -154,12 +154,12 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RotDegree: 0
-    - _RotateAngle: -45
+    - _RotateAngle: 220.56
     - _ShineAlpha: 1
     - _ShineGlow: 1
-    - _ShineLocation: 0.5
+    - _ShineLocation: 0.47
     - _ShinePlacement: 0
-    - _ShineWidth: 0.05
+    - _ShineWidth: 0.075
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
