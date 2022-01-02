@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-public class ShineSlicedUVHelper : BaseMeshEffect
+public class QuadDrawerOnUV3 : BaseMeshEffect
 {
     private Vector2 size = Vector2.zero;
     private Vector2 Size
