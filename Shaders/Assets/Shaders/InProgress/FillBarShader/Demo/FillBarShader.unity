@@ -541,6 +541,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890123881}
   m_CullTransparentMesh: 0
+--- !u!21 &1284882775
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FillBarShader(Clone)
+  m_Shader: {fileID: 4800000, guid: b4c26d79219ac4dc5b4463df28c329c5, type: 3}
+  m_ShaderKeywords: _IMAGETYPE1_SLICED _IMAGETYPE_SLICED
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BarTexture2:
+        m_Texture: {fileID: 2800000, guid: cc2e26243a4a144eb9547ff24124985d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BarTexture3:
+        m_Texture: {fileID: 2800000, guid: cc2e26243a4a144eb9547ff24124985d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DecreaseFillTexture:
+        m_Texture: {fileID: 2800000, guid: cc2e26243a4a144eb9547ff24124985d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FillTexture:
+        m_Texture: {fileID: 2800000, guid: cc2e26243a4a144eb9547ff24124985d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _IncreaseFillTexture:
+        m_Texture: {fileID: 2800000, guid: cc2e26243a4a144eb9547ff24124985d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 69f6bc9f0ca144cbfbc9f23f059e95b7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BarMaxPoint1: 0
+    - _BarMaxPoint2: 0
+    - _BarMaxPoint3: 0
+    - _BarMinPoint1: 0
+    - _BarMinPoint2: 0
+    - _BarMinPoint3: 0
+    - _CutAngle: 1.3
+    - _DecreaseFill: 0
+    - _DrawOrder: 1
+    - _EdgeAngle: 1.3
+    - _FillAmount: 0.5
+    - _FillAmount1: 0.6
+    - _Float0: 0
+    - _ImageType: 1
+    - _ImageType1: 1
+    - _IncreaseFill: 0
+    - _LeftOffset: -0.01
+    - _LeftOffset1: 0
+    - _MainBarFill: 0
+    - _Offset: 0
+    - _RightOffset: -0.01
+    - _RightOffset1: 0
+    - _RotateAngle: 5.3
+    - _ShineLocation: 0.5
+    - _ShineWidth: 0
+    m_Colors:
+    - _BarColor2: {r: 0, g: 1, b: 0, a: 1}
+    - _BarColor3: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DecreaseFillColor: {r: 1, g: 0, b: 0, a: 1}
+    - _FillColor: {r: 0.19607842, g: 1, b: 0.21593024, a: 1}
+    - _FillDirection: {r: 1, g: 1, b: 0, a: 0}
+    - _IncreaseFillColor: {r: 0.07132578, g: 1, b: 0, a: 1}
+    - _PivotPoint: {r: 1, g: 0, b: 0, a: 0}
 --- !u!1 &1293695421
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 847fb4c5033614371aabf133cb8ce459, type: 2}
+  m_Material: {fileID: 1284882775}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 0
@@ -636,14 +731,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293695421}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90b08a08bcbf14495af4e2da544f3f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetGraphic: {fileID: 1293695424}
-  originalMaterial: {fileID: 2100000, guid: 847fb4c5033614371aabf133cb8ce459, type: 2}
-  instancedMaterial: {fileID: 0}
+  originalMaterial: {fileID: 2100000, guid: 4aa8477154ed94924b90bbf50eb2ea87, type: 2}
+  instancedMaterial: {fileID: 1284882775}
 --- !u!1 &1633141002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1098,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0.007
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

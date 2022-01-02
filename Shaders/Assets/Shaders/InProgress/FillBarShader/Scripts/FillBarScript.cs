@@ -62,9 +62,6 @@ public class FillBarScript : MonoBehaviour
             SetBarTo(0.7f);
         if (Input.GetKeyDown(KeyCode.S))
             SetBarTo(0.3f);
-        
-        // Q -> A Main & Increase Fill Drop
-        // W -> Q Main & Increase Fill Drop
     }
 
     private void UpdateFill(int propertyID)

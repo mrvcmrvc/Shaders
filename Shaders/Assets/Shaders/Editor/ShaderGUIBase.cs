@@ -7,6 +7,7 @@ namespace Shaders.Editor
     public abstract class ShaderGUIBase : ShaderGUI
     {
         protected abstract ShaderGUISectionData[] shaderSectionData { get; }
+        protected virtual string[] additionalRenderingProperties { get; }
 
         private Material targetMaterial;
         private Material originalMaterialCopy;
@@ -47,6 +48,15 @@ namespace Shaders.Editor
             EditorGUI.indentLevel++;
             materialEditor.RenderQueueField();
             EditorGUI.indentLevel--;
+
+            if (additionalRenderingProperties != null && additionalRenderingProperties.Length > 0)
+                DrawAdditionalRenderingSectionData();
+        }
+
+        private void DrawAdditionalRenderingSectionData()
+        {
+            for (int i = 0; i < additionalRenderingProperties.Length; i++)
+                DrawProperty(GetPropertyIndex(additionalRenderingProperties[i]));
         }
 
         private void Setup(MaterialEditor materialEditor, MaterialProperty[] properties)
