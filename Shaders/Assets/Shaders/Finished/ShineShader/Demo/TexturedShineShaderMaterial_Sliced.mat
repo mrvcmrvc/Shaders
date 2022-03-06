@@ -72,7 +72,7 @@ Material:
     - PixelSnap: 0
     - _Blending: 0
     - _ColorMask: 15
-    - _Delay: 3
+    - _Delay: 0
     - _Enable: 1
     - _Float0: 5
     - _Glow: 0
