@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: TexturedShineShaderMaterial_Sliced_Mask
   m_Shader: {fileID: 4800000, guid: 12d25bae8de2d4da6849b07934068fe0, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _IMAGETYPE_SLICED _KEYWORD0_SLICED _SPRITEMODE_SIMPLE
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _BLENDING_ADDITIVE _ENABLE_ON _IMAGETYPE_SLICED
+    _KEYWORD0_SLICED _SPRITEMODE_SIMPLE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -69,12 +70,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
+    - _Blending: 1
     - _ColorMask: 15
+    - _Enable: 1
     - _Float0: 1
+    - _Glow: 0
     - _ImageType: 1
     - _InvFade: 1
     - _Keyword0: 1
-    - _ShineLocation: 0.52
+    - _ShineLocation: 0.22
     - _Speed: 0.1
     - _SpriteMode: 0
     - _Stencil: 0
@@ -84,13 +88,15 @@ Material:
     - _StencilWriteMask: 255
     - _ToggleSwitch0: 0
     - _UseUIAlphaClip: 0
-    - _XMovement: 0.5
+    - _XMovement: 1
     - _XOffset: 0.337
+    - _XSpeed: 0.5
     - _YMovement: 0
     - _YOffset: 0
+    - _YSpeed: 0
     - _offset1: 0
     - _tiling1: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ShineColor: {r: 0, g: 0.18335009, b: 1, a: 1}
+    - _ShineColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}

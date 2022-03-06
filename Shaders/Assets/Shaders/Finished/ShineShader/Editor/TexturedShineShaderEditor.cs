@@ -8,7 +8,12 @@ public class TexturedShineShaderEditor : ShaderGUIBase
 {
     protected override ShaderGUISectionData[] shaderSectionData { get; } = new ShaderGUISectionData[2]
     {
-        new ShaderGUISectionData("Transform", "_ShineLocation", "_XMovement", "_YMovement"),
-        new ShaderGUISectionData("Visual", "_ShineMask", "_ShineTexture", "_ImageType", "_ShineColor")
+        new ShaderGUISectionData("Transform", "_Enable", "_XSpeed", "_YSpeed", "_Delay"),
+        new ShaderGUISectionData("Visual", "_ShineMask", "_ShineTexture", "_ImageType", "_ShineColor", "_Glow")
+    };
+
+    protected override string[] additionalRenderingProperties { get; } = new string[1]
+    {
+        "_Blending"
     };
 }
