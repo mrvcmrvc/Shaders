@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -175,6 +177,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: cc08a0c35ffc64642a6c5879e2f04a64, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -374,6 +377,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: d4a46e5894d954cb49b857407c95bfc5, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -509,6 +513,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: 333acc5c407914dd88c36fe75f50cb21, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -596,6 +601,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: 0e8f436c562194f428416c3cda6555a5, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -707,6 +713,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1633141005
@@ -735,8 +742,6 @@ GameObject:
   - component: {fileID: 1754678257}
   - component: {fileID: 1754678256}
   - component: {fileID: 1754678255}
-  - component: {fileID: 1754678259}
-  - component: {fileID: 1754678258}
   m_Layer: 5
   m_Name: GenericSample_Sliced
   m_TagString: Untagged
@@ -790,6 +795,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: 79521b73e640b4d2791d9ece1a6d2838, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -812,35 +818,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754678253}
   m_CullTransparentMesh: 1
---- !u!114 &1754678258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754678253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec2d0858df3044718935b5e3a1fa4387, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  propertyName: _ShineColor
-  color: {r: 0, g: 1, b: 0.011662006, a: 1}
---- !u!114 &1754678259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754678253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2dfbef609d94d128bc7d15657d4928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetGraphic: {fileID: 1754678256}
-  exposes:
-  - {fileID: 1754678258}
 --- !u!1 &1862462237
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +876,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1862462240
 Canvas:
   m_ObjectHideFlags: 0
@@ -957,8 +935,6 @@ GameObject:
   - component: {fileID: 1913416963}
   - component: {fileID: 1913416962}
   - component: {fileID: 1913416961}
-  - component: {fileID: 1913416966}
-  - component: {fileID: 1913416965}
   m_Layer: 5
   m_Name: GenericSample_Sliced_Mask
   m_TagString: Untagged
@@ -1012,6 +988,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: ac5dde70f72a44fbe9a04977c311365c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1034,32 +1011,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913416959}
   m_CullTransparentMesh: 1
---- !u!114 &1913416965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1913416959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56cb029f0c12e4eec937d4419b96c84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  propertyName: _ShineLocation
-  propertyValue: 0
---- !u!114 &1913416966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1913416959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2dfbef609d94d128bc7d15657d4928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetGraphic: {fileID: 1913416962}
-  exposes:
-  - {fileID: 1913416965}

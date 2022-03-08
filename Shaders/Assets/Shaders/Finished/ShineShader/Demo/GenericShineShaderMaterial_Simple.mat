@@ -159,7 +159,7 @@ Material:
     - _RotDegree: 0
     - _RotateAngle: 0
     - _ShineAlpha: 1
-    - _ShineGlow: 1
+    - _ShineGlow: 0.8
     - _ShineLocation: 0.5
     - _ShinePlacement: 0
     - _ShineWidth: 0.1
@@ -190,3 +190,4 @@ Material:
     - _ShineColor1: {r: 0.18753266, g: 1, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _VTInfoBlock: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
