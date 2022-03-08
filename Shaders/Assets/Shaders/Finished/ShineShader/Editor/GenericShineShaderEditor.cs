@@ -8,7 +8,7 @@ public class GenericShineShaderEditor : ShaderGUIBase
 {
     protected override ShaderGUISectionData[] shaderSectionData { get; } = new ShaderGUISectionData[2]
     {
-        new ShaderGUISectionData("Transform", "_ShineLocation", "_ShineWidth", "_RotateAngle"),
+        new ShaderGUISectionData("Transform", "_Speed", "_ShineWidth", "_RotateAngle"),
         new ShaderGUISectionData("Visual", "_ShineMask", "_ShineGlow", "_ImageType", "_ShineColor")
     };
     
