@@ -56,8 +56,8 @@ Material:
     - _Glow1: 1
     - _Glow2: 1
     - _HueChangeAmount: -0.095
-    - _HueChangeLit: -0.024
-    - _HueChangeUnlit: 0.008
+    - _HueChangeLit: 0
+    - _HueChangeUnlit: 0.02
     - _HueShift: 0
     - _Intensity: 3.24
     - _OverlayBlend: 1
@@ -66,8 +66,8 @@ Material:
     - _OverlayPower: 1
     - _Saturation: 0
     - _SaturationChangeAmount: -0.1
-    - _SaturationChangeLit: 0.076
-    - _SaturationChangeUnlit: 0.093
+    - _SaturationChangeLit: 0
+    - _SaturationChangeUnlit: 0.19
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
@@ -85,3 +85,4 @@ Material:
     - _HDR: {r: 3.9999995, g: 3.9999995, b: 3.9999995, a: 1}
     - _MultiplyColor: {r: 1, g: 1, b: 1, a: 1}
     - _OverlayColor: {r: 1, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
