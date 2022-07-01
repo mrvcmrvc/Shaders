@@ -69,6 +69,7 @@ Material:
     - _BarMinPoint3: 0
     - _BlueChannelBrightness: 0
     - _Brightness: 1
+    - _ColorMask: 15
     - _CutAngle: 1.3
     - _Darkener: 1
     - _DecreaseFill: 0
@@ -76,7 +77,6 @@ Material:
     - _EdgeAngle: 1.3
     - _FillAmount: 0.5
     - _FillAmount1: 0.6
-    - _Float0: 0
     - _GrayScaleAmoun: 0
     - _GrayScaleAmount: 1
     - _GreenChannelBrightness: 0
@@ -94,6 +94,12 @@ Material:
     - _Saturation: 1
     - _ShineLocation: 0.5
     - _ShineWidth: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
     - _Value: 1
     m_Colors:
     - _BarColor2: {r: 0, g: 1, b: 0, a: 1}

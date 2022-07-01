@@ -51,7 +51,7 @@ Material:
     - _StencilWriteMask: 255
     - _UseUIAlphaClip: 0
     m_Colors:
-    - _BColor: {r: 0.5424528, g: 0.5518047, b: 1, a: 1}
+    - _BColor: {r: 1, g: 0.7529412, b: 0, a: 1}
     - _BlueChannelColor: {r: 0, g: 0.9604411, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0, g: 0.0491538, b: 1, a: 1}
