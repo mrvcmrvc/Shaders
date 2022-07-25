@@ -42,13 +42,14 @@ public class MaterialReplacer : MonoBehaviour
 
     private void OnValidate()
     {
-        if (graphicsData.Length > 0)
+        Debug.Assert(!(useOnlyList && excludeList), "Do not activate both UseOnlyList and ExcludeList!");
+
+        if (graphicsData != null && graphicsData.Length > 0)
             return;
 
         ResetTargets();
 
-        Debug.Assert(graphicsData.Length > 0);
-        Debug.Assert(useOnlyList && excludeList);
+        Debug.Assert(graphicsData.Length > 0, "No Renderers found to apply material!");
     }
 
     private void Awake()
