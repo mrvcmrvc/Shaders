@@ -29,7 +29,7 @@ public class SpriteMultiMaterialApplier : MonoBehaviour
 
         int latestId = BlitMaterials();
 
-        FinishBliting();
+        FinishBlit();
     }
 
     private void Initialize()
@@ -98,7 +98,7 @@ public class SpriteMultiMaterialApplier : MonoBehaviour
         );
     }
 
-    private void FinishBliting()
+    private void FinishBlit()
     {
         renderCamera.AddCommandBuffer(CameraEvent, buffer);
     }
