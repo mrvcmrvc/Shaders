@@ -8,10 +8,15 @@ public class SpriteMultiMaterialApplier : MonoBehaviour
     private Camera renderCamera;
     [SerializeField]
     public Material[] materials;
+    
+    private const int DepthOffset = 10;
 
-    [SerializeField, HideInInspector]
     private CommandBuffer buffer;
     private SpriteRenderer spriteRenderer;
+    private Shader transparencyShader;
+    private Material transparencyMaterial;
+    private int depthOffset;
+    
     private const string BufferName = "Apply Sprite Multi Material";
     private const CameraEvent CameraEvent = UnityEngine.Rendering.CameraEvent.AfterForwardAlpha;
     private const string RtNamePrefix = "currentDestination_";
@@ -27,9 +32,9 @@ public class SpriteMultiMaterialApplier : MonoBehaviour
 
         Initialize();
 
-        int latestId = BlitMaterials();
-
-        FinishBlit();
+        BlitMaterials();
+        
+        renderCamera.AddCommandBuffer(CameraEvent, buffer);
     }
 
     private void Initialize()
@@ -40,6 +45,11 @@ public class SpriteMultiMaterialApplier : MonoBehaviour
         {
             name = BufferName,
         };
+
+        depthOffset = renderCamera.GetCommandBuffers(CameraEvent).Length * DepthOffset;
+        
+        transparencyShader = Shader.Find("Unlit/TransparentShader");
+        transparencyMaterial = new Material(transparencyShader);
     }
 
     [ContextMenu("Clear")]
@@ -51,40 +61,42 @@ public class SpriteMultiMaterialApplier : MonoBehaviour
         if (renderCamera != null)
             renderCamera.RemoveCommandBuffer(CameraEvent, buffer);
 
+        DestroyImmediate(transparencyMaterial);
         spriteRenderer.enabled = true;
 
         buffer.Clear();
         buffer = null;
     }
 
-    private int BlitMaterials()
-    {
-        GenerateNewRT($"{RtNamePrefix}Screen", out int screenId);
-        buffer.Blit(BuiltinRenderTextureType.CameraTarget, screenId);
-
-        GenerateNewRT($"{RtNamePrefix}Original", out int originalId);
+    private void BlitMaterials()
+    {        
+        GenerateNewRT($"{RtNamePrefix}Original.{Random.value}", depthOffset, out int originalId);
+        
         buffer.SetRenderTarget(originalId);
-        buffer.ClearRenderTarget(true, true, new Color(0, 0, 0, 0));
+        buffer.ClearRenderTarget(false, true, Color.clear);
+        
         buffer.DrawRenderer(spriteRenderer, spriteRenderer.sharedMaterial);
 
         int latestId = originalId;
         for (int i = 0; i < materials.Length; i++)
         {
-            GenerateNewRT($"{RtNamePrefix}{i}", out int id);
+            GenerateNewRT($"{RtNamePrefix}{i}.{Random.value}", depthOffset + i + 1, out int id);
 
-            buffer.Blit(latestId, id, materials[i]);
+            buffer.SetRenderTarget(id);
+            buffer.ClearRenderTarget(false, true, Color.clear);
+
+            buffer.Blit(latestId, BuiltinRenderTextureType.CurrentActive, materials[i]);
             buffer.ReleaseTemporaryRT(latestId);
 
             latestId = id;
         }
-
-        buffer.Blit(latestId, BuiltinRenderTextureType.CameraTarget);
-        buffer.Blit(screenId, BuiltinRenderTextureType.CameraTarget);
-
-        return latestId;
+        
+        buffer.SetRenderTarget(BuiltinRenderTextureType.CameraTarget);
+        buffer.Blit(latestId, BuiltinRenderTextureType.CurrentActive, transparencyMaterial);
+        buffer.ReleaseTemporaryRT(latestId);
     }
 
-    private void GenerateNewRT(string rtName, out int id)
+    private void GenerateNewRT(string rtName, int depth, out int id)
     {
         id = Shader.PropertyToID(rtName);
 
@@ -92,14 +104,9 @@ public class SpriteMultiMaterialApplier : MonoBehaviour
             id,
             1920,
             1080,
-            0,
+            depth,
             FilterMode.Bilinear,
             RenderTextureFormat.DefaultHDR
         );
-    }
-
-    private void FinishBlit()
-    {
-        renderCamera.AddCommandBuffer(CameraEvent, buffer);
     }
 }
