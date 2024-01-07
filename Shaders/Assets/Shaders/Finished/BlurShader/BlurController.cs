@@ -19,13 +19,6 @@ public class BlurController : MonoBehaviour
     private float resolutionScaling = 0.5f;
     [SerializeField]
     private float transitionDuration = 0.1f;
-    [SerializeField,
-     Tooltip("This option forces us to always render to intermediate RT before sending it to camera. " +
-             "The issue is, before rendering starts, we don't know what command buffers will execute at this stage " +
-             "and there are no 'OnRenderImage' calls we can't know that you will be doing a blit. " +
-             "This leads to a nasty situation where we render into the backbuffer, capture the image back out, " +
-             "then get into a weird state with the blit and it gets flipped.")]
-    private bool fixFlippedCamera;
     
     public event Action OnBlurStackUpdatedEvent;
 
@@ -67,16 +60,12 @@ public class BlurController : MonoBehaviour
     {
         if (blurCommandBuffer != null)
             return;
-        
-        renderCamera.forceIntoRenderTexture = fixFlippedCamera;
 
         Startup();
     }
     
     private void OnDisable()
     {
-        renderCamera.forceIntoRenderTexture = false;
-
         Cleanup();
     }
 
