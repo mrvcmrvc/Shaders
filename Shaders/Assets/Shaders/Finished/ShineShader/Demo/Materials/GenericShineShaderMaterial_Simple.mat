@@ -15,20 +15,27 @@ MonoBehaviour:
   version: 4
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GenericShineShaderMaterial_Simple
   m_Shader: {fileID: 4800000, guid: 52c130ea3e6784a308e712d9509591b6, type: 3}
-  m_ShaderKeywords: _BLENDING_OVERLAY
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _BLENDING_OVERLAY
+  - _IMAGETYPE_SIMPLE
+  m_InvalidKeywords:
+  - _ENABLE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -124,6 +131,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - Boolean_b28c69da0b82427db6232685aef4436d: 0
     - Vector1_126fddc573f64b339032b175d32a6c23: 45
@@ -140,9 +148,11 @@ Material:
     - _ColorMask: 15
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Delay: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _Enable: 1
     - _EnvironmentReflections: 1
     - _Float0: 0
     - _Float1: 1
@@ -166,7 +176,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.5
+    - _Speed: -0.65
     - _SrcBlend: 1
     - _Stencil: 0
     - _StencilComp: 8
