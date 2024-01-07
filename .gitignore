@@ -42,3 +42,5 @@ _ReSharper.*/
 .Trashes
 ehthumbs.db
 [Tt]humbs.db
+*.log
+*.dwlt
